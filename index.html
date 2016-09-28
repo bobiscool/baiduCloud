@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karl's baiduyun</title>
+    <link href="css/Main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="Out-border">
+    <div id="Top-banner">
+        <div id="Logo" class="f-icon"></div>
+        <div id="Page-Button">
+            <a class="Page-Button Page-Button-unActive" href="javascript: void(0);" id="Home-page-button">主页</a>
+            <span class="separate"></span>
+            <div class="Page-Button Page-Button-Active" id="Cloud-page-button">
+                <a class="Page-down" href="javascript: void(0);" target="_self"> <em class="f-icon"></em>网盘 </a>
+            </div>
+            <span class="separate"></span>
+            <a class="Page-Button Page-Button-unActive" href="javascript: void(0);" id="Share-page-button">分享</a>
+            <a class="Page-Button  Page-Button-unActive" href="javascript: void(0);" id="App-page-button">应用</a>
+        </div>
+        <div id="User-information">
+            <ul>
+                <!--<li><input type="text" placeholder="在此处搜索"><span>go</span></li>-->
+                <li id="Storage">
+                    <a class="increase-link" href="" target="_blank">扩容</a>
+                    <div class="progress">
+                        <div class="pro-con">
+                            <span class="bar">
+                               2020.45G/2153G
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li id="User-name" class="Page-up">Karl <em class="f-icon "></em></li>
+                <li id="Usercenter-page-button">
+                    <div id="vip-center">会员中心</div>
+                </li>
+                <li id="Download-App">客户端下载</li>
+                <li id="Notice">通知</li>
+                <li id="More" class="Page-up">更多 <em class="f-icon "></em></li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div id="Right-banner">
+        <ul id="Item-list">
+            <li data-showwhat="All" class="active"><a href="javascript: void(0);" class=""><span
+                    class="Boutton-ico"></span><span>全部文件</span></a></li>
+            <li data-showwhat="PictureData"><a href="javascript: void(0);" class=""><span
+                    class="Boutton-ico"></span><span>图片</span></a></li>
+            <li data-showwhat="FileData"><a href="javascript: void(0);" class=""><span class="Boutton-ico"></span><span>文档</span></a>
+            </li>
+            <li data-showwhat="VideoData"><a href="javascript: void(0);" class=""><span
+                    class="Boutton-ico"></span><span>视频</span></a></li>
+            <li data-showwhat="Torrent"><a href="javascript: void(0);" class=""><span class="Boutton-ico"></span><span>种子</span></a>
+            </li>
+            <li data-showwhat="AudioData"><a href="javascript: void(0);" class=""><span
+                    class="Boutton-ico"></span><span>音乐</span></a></li>
+            <li data-showwhat="OtherData"><a href="javascript: void(0);" class=""><span
+                    class="Boutton-ico"></span><span>其他</span></a></li>
+
+
+        </ul>
+
+        <ul id="Item-More">
+            <li>
+                <div class="Item-Sperate"></div>
+                <a href="javascript: void(0);" class=""><span class="Boutton-ico3"></span><span>我的分享</span></a>
+
+            </li>
+            <li>
+                <div class="Item-Sperate"></div>
+                <a href="javascript: void(0);" class=""><span class="Boutton-ico3"></span><span>回收站</span></a></li>
+        </ul>
+
+        <div id="Device">
+            <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>云管家</span></a>
+            <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>Andiord</span></a>
+            <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>Apple</span></a>
+            <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>更多</span></a>
+        </div>
+    </div>
+
+
+    <div id="Main-border">
+        <div id="Tools-bar">
+            <div id="Tools" >
+                <span class="Upload"><span></span>上传</span>
+                <span class="NewFolder">新建文件夹</span>
+                <span>离线下载</span>
+                <span>恢复初始界面</span>
+
+            </div>
+            <div id="LGswitch" class="list-gird-switch list-switch-on">
+                <a class="list-switch"></a>
+                <a class="gird-switch"></a>
+            </div>
+
+
+        </div>
+        <div id="Nav-title" class="Nav-title Notin">
+            <ul id="Nav-title-ul">
+                <!--<li class="inDrectory-list"><span  class="Blue">返回上一级</span><span class="Gray">|</span></li>-->
+                <li class="Back-to-main" data-showwhat="0"><span class="Blue">全部文件</span></li>
+            </ul>
+        </div>
+        <div id="Operation-bar" class="UchoosedItemList">
+            <input type="checkbox" value="复选"/>
+            <p class="TextMassage">已选中<span id="Howmany">0</span>个文件/文件夹</p>
+            <span class="Item-Operate">分享</span>
+            <span class="Item-Operate">下载</span>
+            <span class="Item-Operate">删除</span>
+            <span class="Item-Operate">修改</span>
+            <span class="Item-Operate">更多</span>
+
+            <span class="Item-type"><span class="Down"></span>文件名</span>
+            <span class="Item-type"><span class="Down"></span>大小</span>
+            <span class="Item-type"><span class="Up"></span>修改日期</span>
+
+
+            <!--是否也应 设置 两种显示模式 listview  和girdview  后面再说  先girdview-->
+        </div>
+
+
+        <div id="View" class="List-view">
+
+            <dl>
+                <dd class="Unclick">
+                    <div class="Ob">
+
+                        <div class="avi">
+                            <span></span>
+                        </div>
+                        <span class="File-Title">dsfsdfsdfs</span>
+                        <span class="File-more">dsfsdfsdfs</span>
+                        <span class="File-more">dsfsdfsdfs</span>
+                    </div>
+
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+
+</div>
+</body>
+<script src="js/controlDOM.js"></script>
+<script src="js/dataTohtmlTamplate.js"></script>
+<script src="js/randomData.js"></script>
+<script src="js/DataManage.js"></script>
+<script src="js/index.js"></script>
+
+</html>

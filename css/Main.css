@@ -1,0 +1,961 @@
+html,
+body,
+div,
+ul {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font: 12px/1.5 "Microsoft YaHei", "Microsoft JhengHei", "黑体";
+}
+li {
+  list-style: none;
+}
+.f-icon {
+  background-image: url("../img/frame-icon.png");
+  background-repeat: no-repeat;
+}
+.Boutton-ico {
+  margin-right: 4px;
+  width: 22px;
+  height: 22px;
+  background: url("../img/navigator.png") no-repeat;
+}
+.Boutton-ico2 {
+  margin-right: 4px;
+  width: 33px;
+  height: 24px;
+  background: url("../img/btn-4.png") no-repeat;
+}
+#Out-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1200px;
+  overflow-x: hidden;
+}
+#Top-banner {
+  float: left;
+  width: 100%;
+  background-color: #252525;
+  height: 50px;
+}
+#Top-banner a {
+  color: white;
+}
+#Top-banner #Logo {
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  height: 36px;
+  width: 113px;
+  background-position: 0 0;
+  display: inline;
+}
+#Top-banner #Page-Button {
+  padding: 0 0 3px 25px;
+  height: 45px;
+  float: left;
+  width: 400px;
+  padding-bottom: 0 !important;
+  display: block;
+}
+.Page-Button {
+  float: left;
+  display: inline-block;
+  width: 90px;
+  height: 50px;
+  margin-left: 5px;
+  font: 18px "Microsoft YaHei", "Microsoft JhengHei", "黑体";
+  text-align: center;
+  line-height: 48px;
+}
+.Page-Button-unActive {
+  color: #d8d8d8;
+}
+.Page-Button-Active {
+  background-color: #0f0f0f;
+  font-weight: bold;
+  color: #FFF;
+}
+.Page-down,
+.Page-up {
+  float: left;
+  display: inline-block;
+  width: 90px;
+  height: 50px;
+}
+.Page-down em,
+.Page-up em {
+  float: right;
+  display: inline-block;
+  margin-right: 9px;
+  margin-top: 18px;
+  height: 12px;
+  width: 12px;
+  font-size: 0;
+}
+.Page-down em {
+  background-position: -89px -55px !important;
+}
+.Page-up em {
+  background-position: -89px -45px !important;
+}
+.separate {
+  float: left;
+  display: inline-block;
+  margin: 0;
+  height: 48px;
+  width: 2px;
+  background: #2a2b2d;
+}
+#User-information {
+  display: inline-block;
+  float: right;
+  width: 600px;
+  height: 48px;
+  line-height: 48px;
+}
+#User-information ul {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+#User-information ul li {
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 48px;
+  color: #FFFFFF;
+  margin-right: 10px;
+  text-align: center;
+}
+#User-information ul #Storage {
+  width: 173px;
+}
+#User-information ul #Storage .progress {
+  display: inline-block;
+  width: 130px;
+  height: 22px;
+}
+#User-information ul #Storage .progress .pro-con {
+  display: block;
+  width: 130px;
+  height: 20px;
+  margin-top: 5px;
+  background: white;
+  border: 1px solid brown;
+  border-radius: 2px;
+}
+#User-information ul #Storage .progress .pro-con .bar {
+  display: inline-block;
+  background: springgreen;
+  float: left;
+  height: 20px;
+  width: 93.8434%;
+  color: gray;
+  line-height: 20px;
+}
+#User-information ul #Storage a {
+  display: inline-block;
+  width: 35px;
+  color: #d8d8d8;
+  margin-right: 2px;
+}
+#User-information ul #User-name {
+  color: #fff;
+}
+#User-information ul #vip-center {
+  display: block;
+  width: 100%;
+  margin-top: 13px;
+  height: 22px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: red;
+  color: #fff;
+  font: 12px/1.5 "SimSun";
+  text-align: center;
+  line-height: 22px;
+}
+#User-information ul #Download-App {
+  width: 100px;
+}
+#Right-banner {
+  display: inline-block;
+  float: left;
+  width: 210px;
+  min-height: 100%;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border-right: #c6c8cc 1px solid;
+}
+#Right-banner #Item-list {
+  float: left;
+  width: 210px;
+  height: 296px;
+}
+#Right-banner #Item-list li {
+  width: 210px;
+  margin-top: 10px;
+  margin-left: -40px;
+  height: 32px;
+  line-height: 32px;
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+}
+#Right-banner #Item-list .active {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list .active a span {
+  background-position-x: -23px !important;
+}
+#Right-banner #Item-list span {
+  margin-right: 10px;
+}
+#Right-banner #Item-list a {
+  margin-left: 40px;
+  color: #666;
+}
+#Right-banner #Item-list a span {
+  display: inline-block;
+  vertical-align: middle;
+}
+#Right-banner #Item-list li:nth-child(1) a span {
+  background-position: 0 0;
+}
+#Right-banner #Item-list li:nth-child(2) a span {
+  background-position: 0 -22px;
+}
+#Right-banner #Item-list li:nth-child(3) a span {
+  background-position: 0 -44px;
+}
+#Right-banner #Item-list li:nth-child(4) a span {
+  background-position: 0 -89px;
+}
+#Right-banner #Item-list li:nth-child(5) a span {
+  background-position: 0 -201px;
+}
+#Right-banner #Item-list li:nth-child(6) a span {
+  background-position: 0 -66px;
+}
+#Right-banner #Item-list li:nth-child(7) a span {
+  background-position: 0 -177px;
+}
+#Right-banner #Item-list li:nth-child(1):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(1):hover a span {
+  background-position: -23px 0;
+}
+#Right-banner #Item-list li:nth-child(2):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(2):hover a span {
+  background-position: -23px -22px;
+}
+#Right-banner #Item-list li:nth-child(3):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(3):hover a span {
+  background-position: -23px -44px;
+}
+#Right-banner #Item-list li:nth-child(4):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(4):hover a span {
+  background-position: -23px -89px;
+}
+#Right-banner #Item-list li:nth-child(5):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(5):hover a span {
+  background-position: -23px -201px;
+}
+#Right-banner #Item-list li:nth-child(6):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(6):hover a span {
+  background-position: -23px -66px;
+}
+#Right-banner #Item-list li:nth-child(7):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-list li:nth-child(7):hover a span {
+  background-position: -23px -177px;
+}
+#Right-banner #Item-More {
+  float: left;
+  width: 210px;
+  height: 90px;
+}
+#Right-banner #Item-More .Boutton-ico3 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/Item-more.png");
+}
+#Right-banner #Item-More span {
+  margin-right: 10px;
+}
+#Right-banner #Item-More .Item-Sperate {
+  width: 100%;
+  height: 0;
+  margin: 5px 0 5px -40px;
+  border-top: #dce1e6 1px solid;
+  border-bottom: #f7f9fb 1px solid;
+}
+#Right-banner #Item-More a {
+  color: #666;
+}
+#Right-banner #Item-More a span {
+  display: inline-block;
+  vertical-align: middle;
+}
+#Right-banner #Item-More li {
+  width: 206px;
+  margin-top: 10px;
+  height: 32px;
+}
+#Right-banner #Item-More li:nth-child(1) a span {
+  background-position: 0 0;
+}
+#Right-banner #Item-More li:nth-child(2) a span {
+  background-position: 0 -22px;
+}
+#Right-banner #Device {
+  float: left;
+  margin-top: 10px;
+  margin-left: 25px;
+  width: 225px;
+  height: 50px;
+}
+#Right-banner #Device a {
+  display: inline-block;
+  font-size: 12px;
+  width: 46px;
+  height: 42px;
+  margin-left: -4px;
+  color: #666;
+  text-align: center;
+}
+#Right-banner #Device a span {
+  display: inline-block;
+  text-align: center;
+}
+#Right-banner #Device a span:nth-child(1) {
+  display: inline-block;
+  margin-left: 6px;
+}
+#Right-banner #Device a:nth-child(1) span {
+  background-position: 0 -73px;
+}
+#Right-banner #Device a:nth-child(2) span {
+  background-position: -70px -73px;
+}
+#Right-banner #Device a:nth-child(3) span {
+  background-position: 0 0;
+}
+#Right-banner #Device a:nth-child(4) span {
+  background-position: -206px -73px;
+}
+#Main-border {
+  margin-top: 50px;
+  margin-left: 210px;
+  position: relative;
+  box-shadow: -1px 0 3px #aaa;
+  min-width: 990px;
+  min-height: 100%;
+  font-size: 12px;
+}
+#Main-border #Tools-bar {
+  position: relative;
+  left: 1px;
+  height: 50px;
+  padding-left: 10px;
+  line-height: 50px;
+  border-bottom: 1px solid #d2d2d2;
+  background: #F7F7F7 left -53px repeat-x;
+}
+#Main-border #Tools-bar span {
+  display: inline-block;
+  margin-left: 10px;
+  height: 28px;
+  line-height: 28px;
+}
+#Main-border #Tools-bar #Tools {
+  position: absolute;
+  top: 0px;
+  padding-top: 11px;
+  line-height: normal;
+}
+#Main-border #Tools-bar #Tools .Upload {
+  width: 106px;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: url("../img/button.png") no-repeat right -645px;
+}
+#Main-border #Tools-bar #Tools .Upload span {
+  background: url("../img/uploadCreate.png");
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 18px;
+  vertical-align: middle;
+  height: 24px;
+  width: 20px;
+}
+#Main-border #Tools-bar .list-gird-switch {
+  margin: 8px 0 0 0;
+  float: right;
+  height: 29px;
+  width: 92px;
+}
+#Main-border #Tools-bar .list-gird-switch .list-switch {
+  height: 29px;
+  width: 32px;
+  float: left;
+  background: url("../img/list-switch.png") no-repeat 0 0;
+}
+#Main-border #Tools-bar .list-gird-switch .gird-switch {
+  height: 29px;
+  width: 32px;
+  float: left;
+  background: url("../img/list-switch.png") no-repeat;
+}
+#Main-border #Tools-bar .list-switch-on .list-switch {
+  background: url("../img/list-switch.png") no-repeat 0 0;
+}
+#Main-border #Tools-bar .list-switch-on .gird-switch {
+  background: url("../img/list-switch.png") no-repeat;
+  background-position: right 0;
+}
+#Main-border #Tools-bar .list-switch-on .gird-switch:hover {
+  background-position: right -70px;
+}
+#Main-border #Tools-bar .gird-switch-on .list-switch {
+  background: url("../img/list-switch.png") no-repeat 0 -35px;
+}
+#Main-border #Tools-bar .gird-switch-on .list-switch:hover {
+  background-position: 0 -70px;
+}
+#Main-border #Tools-bar .gird-switch-on .gird-switch {
+  background: url("../img/list-switch.png") no-repeat;
+  background-position: right -35px;
+}
+#Main-border #Tools-bar .g-button-drop-down {
+  vertical-align: top;
+  margin: 0 5px;
+  display: inline-block;
+}
+#Main-border .Nav-title {
+  display: block;
+  position: relative;
+  left: 1px;
+  margin: 10px 0 10px 0;
+  padding: 0px 27px;
+  background-color: #FFF;
+  height: 20px;
+}
+#Main-border .Nav-title ul {
+  float: left;
+  margin-left: -40px;
+}
+#Main-border .Nav-title ul li {
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+}
+#Main-border .Notin .inDrectory-list {
+  display: none;
+}
+#Main-border .Notin .Back-to-main .Blue {
+  color: #80848C;
+}
+#Main-border .InaDrec .inDrectory-list {
+  display: inline-block;
+}
+#Main-border .InaDrec .Blue {
+  color: dodgerblue;
+  cursor: pointer;
+}
+#Main-border .InaDrec .Blue:hover {
+  text-decoration: underline;
+}
+#Main-border .InaDrec .Gray {
+  color: #a4a4a4;
+}
+#Main-border #Operation-bar {
+  position: relative;
+  height: 44px;
+  left: 25px;
+  color: #666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #d2d2d2;
+  line-height: 44px;
+  border-right: none;
+  background: #F7F7F7;
+}
+#Main-border #Operation-bar .list-gird-switch {
+  margin: 8px 0 0 0;
+  float: right;
+  height: 29px;
+  width: 92px;
+}
+#Main-border #Operation-bar .list-gird-switch .list-switch {
+  height: 29px;
+  width: 32px;
+  float: left;
+  background: url("../img/list-switch.png") no-repeat 0 0;
+}
+#Main-border #Operation-bar .list-gird-switch .gird-switch {
+  height: 29px;
+  width: 32px;
+  float: left;
+  background: url("../img/list-switch.png") no-repeat;
+}
+#Main-border #Operation-bar .list-switch-on .list-switch {
+  background: url("../img/list-switch.png") no-repeat 0 0;
+}
+#Main-border #Operation-bar .list-switch-on .gird-switch {
+  background: url("../img/list-switch.png") no-repeat;
+  background-position: right 0;
+}
+#Main-border #Operation-bar .list-switch-on .gird-switch:hover {
+  background-position: right -70px;
+}
+#Main-border #Operation-bar .gird-switch-on .list-switch {
+  background: url("../img/list-switch.png") no-repeat 0 -35px;
+}
+#Main-border #Operation-bar .gird-switch-on .list-switch:hover {
+  background-position: 0 -70px;
+}
+#Main-border #Operation-bar .gird-switch-on .gird-switch {
+  background: url("../img/list-switch.png") no-repeat;
+  background-position: right -35px;
+}
+#Main-border .ChoosedItem {
+  background-color: #F7F7F7;
+}
+#Main-border .ChoosedItem .TextMassage {
+  display: inline-block;
+  margin: 0;
+}
+#Main-border .ChoosedItem .TextMassage span {
+  display: inline-block;
+}
+#Main-border .ChoosedItem .Item-Operate {
+  display: inline-block;
+  margin-left: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20px;
+  line-height: 20px;
+}
+#Main-border .ChoosedItem .Item-type {
+  display: none;
+}
+#Main-border .UchoosedItemGird .TextMassage {
+  display: none;
+  margin: 0;
+}
+#Main-border .UchoosedItemGird .Item-Operate {
+  display: none;
+}
+#Main-border .UchoosedItemGird .Item-type {
+  display: none;
+}
+#Main-border .UchoosedItemList .TextMassage {
+  display: none;
+}
+#Main-border .UchoosedItemList .Item-Operate {
+  display: none;
+}
+#Main-border .UchoosedItemList .Item-type {
+  margin-left: -3px;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  border-right: #dce1e6 1px solid;
+  border-left: #f4f6f8 1px solid;
+  text-align: center;
+}
+#Main-border .UchoosedItemList .Item-type .Updown {
+  display: none;
+}
+#Main-border .UchoosedItemList .Item-type:hover {
+  background: #E8F5FD;
+}
+#Main-border .UchoosedItemList .Item-type:hover .Down {
+  display: inline-block;
+  background: url(../img/Updown.png) no-repeat -50px -45px;
+  height: 10px;
+  width: 9px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+#Main-border .UchoosedItemList .Item-type:hover .Up {
+  display: inline-block;
+  background: url(../img/Updown.png) no-repeat -60px -45px;
+  height: 10px;
+  width: 9px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+#Main-border #View {
+  position: relative;
+  left: 25px;
+  min-width: 900px;
+  min-height: 1000px;
+}
+#Main-border .Gird-view dl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+#Main-border .Gird-view dl dd {
+  margin: 0;
+  display: inline-block;
+}
+#Main-border .Gird-view dl dd .Ob {
+  width: 142px;
+  height: 122px;
+  float: left;
+  margin: 4px 4px 0 0;
+  text-align: center;
+}
+#Main-border .Gird-view dl dd .Ob .File-more {
+  display: none;
+}
+#Main-border .Gird-view dl .Unclick .Ob div {
+  position: relative;
+  margin: 0 auto;
+  width: 90px;
+  height: 92px;
+  border: 2px solid #FFF;
+  overflow: hidden;
+}
+#Main-border .Gird-view dl .Unclick .Ob div span {
+  display: none;
+  background: url("../img/checkbox.png") 6px -36px no-repeat;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  height: 30px;
+  width: 30px;
+}
+#Main-border .Gird-view dl .Unclick:hover .Ob div {
+  position: relative;
+  margin: 0 auto;
+  width: 90px;
+  height: 92px;
+  border: 2px solid #2e80dc;
+  overflow: hidden;
+}
+#Main-border .Gird-view dl .Unclick:hover .Ob div span {
+  display: inline-block;
+  background: url("../img/checkbox.png") 6px -36px no-repeat;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  height: 30px;
+  width: 30px;
+}
+#Main-border .Gird-view dl .Clicked .Ob div {
+  position: relative;
+  margin: 0 auto;
+  width: 90px;
+  height: 92px;
+  border: 2px solid #2e80dc;
+  overflow: hidden;
+}
+#Main-border .Gird-view dl .Clicked .Ob div span {
+  background: url(../img/checkbox.png) -30px -36px no-repeat;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  height: 30px;
+  width: 30px;
+}
+#Main-border .Gird-view dl .Drec {
+  background: url(../img/File-type.png) 16px -77px no-repeat;
+}
+#Main-border .Gird-view dl .avi,
+#Main-border .Gird-view dl .doc,
+#Main-border .Gird-view dl .eps,
+#Main-border .Gird-view dl .ppt,
+#Main-border .Gird-view dl .css,
+#Main-border .Gird-view dl .mp3,
+#Main-border .Gird-view dl .HTML,
+#Main-border .Gird-view dl .pdf,
+#Main-border .Gird-view dl .txt,
+#Main-border .Gird-view dl .docx,
+#Main-border .Gird-view dl .dll,
+#Main-border .Gird-view dl .jpg,
+#Main-border .Gird-view dl .zip,
+#Main-border .Gird-view dl .psd,
+#Main-border .Gird-view dl .wav,
+#Main-border .Gird-view dl .xls {
+  background: url(../img/file-type2.png) no-repeat;
+}
+#Main-border .Gird-view dl .doc {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -140px;
+}
+#Main-border .Gird-view dl .eps {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -297px;
+}
+#Main-border .Gird-view dl .ppt {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -454px;
+}
+#Main-border .Gird-view dl .css {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -611px;
+}
+#Main-border .Gird-view dl .avi {
+  width: 45px;
+  height: 60px;
+  background-position: 20px 20px;
+}
+#Main-border .Gird-view dl .mp3 {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -768px;
+}
+#Main-border .Gird-view dl .HTML {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -925px;
+}
+#Main-border .Gird-view dl .pdf {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1082px;
+}
+#Main-border .Gird-view dl .txt {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1239px;
+}
+#Main-border .Gird-view dl .docx {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1396px;
+}
+#Main-border .Gird-view dl .dll {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1553px;
+}
+#Main-border .Gird-view dl .jpg {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1710px;
+}
+#Main-border .Gird-view dl .zip {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -1867px;
+}
+#Main-border .Gird-view dl .psd {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -2024px;
+}
+#Main-border .Gird-view dl .wav {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -2181px;
+}
+#Main-border .Gird-view dl .xls {
+  width: 45px;
+  height: 57px;
+  background-position: 20px -2338px;
+}
+#Main-border .List-view dl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+#Main-border .List-view dl dd {
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  display: block;
+  border-bottom: 1px #d4d7dc solid;
+}
+#Main-border .List-view dl dd .Ob {
+  margin-top: 12px;
+  display: block;
+  float: left;
+  width: 100%;
+  height: 23px;
+}
+#Main-border .List-view dl dd .Ob .Haschild {
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
+  width: 16px;
+  height: 16px;
+  background: url("../img/haschild.png") no-repeat;
+}
+#Main-border .List-view dl dd .Ob .File-Title {
+  margin-left: 10px;
+  display: inline-block;
+  float: left;
+  width: 20%;
+}
+#Main-border .List-view dl dd .Ob .File-more {
+  margin-left: 20px;
+  display: inline-block;
+  float: left;
+  color: #a4a4a4;
+  width: 20%;
+}
+#Main-border .List-view dl .Unclick:hover {
+  background: #F0F8FD;
+}
+#Main-border .List-view dl .Unclick:hover .Ob div span {
+  display: inline-block;
+  background: url(../img/checkbox.png) 1px -41px no-repeat;
+}
+#Main-border .List-view dl .Unclick .Ob div {
+  display: inline-block;
+  float: left;
+  width: 50px;
+  height: 23px;
+}
+#Main-border .List-view dl .Unclick .Ob div span {
+  display: none;
+  background: url(../img/checkbox.png) 1px -41px no-repeat;
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+#Main-border .List-view dl .Clicked {
+  background: #F0F8FD;
+}
+#Main-border .List-view dl .Clicked .Ob div {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+  height: 23px;
+}
+#Main-border .List-view dl .Clicked .Ob div span {
+  background: url(../img/checkbox.png) -35px -41px no-repeat;
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+#Main-border .List-view dl .Drec {
+  background: url(../img/listIcon.png) 32px -30px no-repeat;
+}
+#Main-border .List-view dl .avi,
+#Main-border .List-view dl .doc,
+#Main-border .List-view dl .eps,
+#Main-border .List-view dl .ppt,
+#Main-border .List-view dl .css,
+#Main-border .List-view dl .mp3,
+#Main-border .List-view dl .HTML,
+#Main-border .List-view dl .pdf,
+#Main-border .List-view dl .txt,
+#Main-border .List-view dl .docx,
+#Main-border .List-view dl .dll,
+#Main-border .List-view dl .jpg,
+#Main-border .List-view dl .zip,
+#Main-border .List-view dl .psd,
+#Main-border .List-view dl .wav,
+#Main-border .List-view dl .xls {
+  background: url(../img/list-icon2.png) no-repeat;
+}
+#Main-border .List-view dl .doc {
+  background-position: 32px -31px;
+}
+#Main-border .List-view dl .eps {
+  background-position: 32px -61px;
+}
+#Main-border .List-view dl .ppt {
+  background-position: 32px -91px;
+}
+#Main-border .List-view dl .css {
+  background-position: 32px -121px;
+}
+#Main-border .List-view dl .avi {
+  background-position: 32px 0;
+}
+#Main-border .List-view dl .mp3 {
+  background-position: 32px -151px;
+}
+#Main-border .List-view dl .HTML {
+  background-position: 32px -181px;
+}
+#Main-border .List-view dl .pdf {
+  background-position: 32px -211px;
+}
+#Main-border .List-view dl .txt {
+  background-position: 32px -241px;
+}
+#Main-border .List-view dl .docx {
+  background-position: 32px -271px;
+}
+#Main-border .List-view dl .dll {
+  background-position: 32px -301px;
+}
+#Main-border .List-view dl .jpg {
+  background-position: 32px -331px;
+}
+#Main-border .List-view dl .zip {
+  background-position: 32px -361px;
+}
+#Main-border .List-view dl .psd {
+  background-position: 32px -391px;
+}
+#Main-border .List-view dl .wav {
+  background-position: 32px -421px;
+}
+#Main-border .List-view dl .xls {
+  background-position: 32px -451px;
+}
