@@ -18,7 +18,7 @@ var O_selectAll = O_Operation.getElementsByTagName('input')[0];
 var O_Howmany = document.getElementById('Howmany');
 var O_Navtitle = document.getElementById('Nav-title');
 var O_Navtitleul = document.getElementById('Nav-title-ul');
-// var O_NewFolder = document.getElementById()
+var O_NewFolder = document.getElementsByClassName('NewFolder')[0];
 var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
@@ -150,6 +150,11 @@ O_Navtitleul.addEventListener('click',function (ev) {
 
 });
 
+O_NewFolder.addEventListener('click',function(ev){
+    if(F_Tool.parents(ev.target,'.NewFolder')){
+        //function new folder
+    }
+});
 
 
 //点击事件区域
@@ -255,4 +260,9 @@ function F_fromArraygetData(Arr,data) {
 
 function F_deleteBehind(Arr,number) {
     return Arr.slice(0,F_manageData.whereTheValue(Arr,number)+1);
+}
+
+function F_createNewFolder() {
+    //数据层 新建 这时候跟 i有关了 卧槽。。。。 如果删除了 那么个数 与id德福安息就 崩溃了   
+    //
 }

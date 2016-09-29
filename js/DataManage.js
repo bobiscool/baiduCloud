@@ -58,8 +58,8 @@ var F_manageData ={
         var arr =null;
         for(var i=0;i<data.length;i++){
             console.log(i);
-            console.log(data[i].idNumber+'按剩余的话说'+data[find-1].pid);
-            if(data[i].idNumber==data[find-1].pid){
+            console.log(data[i].idNumber+'按剩余的话说'+F_manageData.whereTheValue(data,find).pid);
+            if(data[i].idNumber==F_manageData.WhoHasTheValue(data,find).pid){
                 arr=data[i].idNumber;
                 console.log('已找到父级'+arr);
             }
@@ -147,6 +147,16 @@ var F_manageData ={
         console.log('我要删除的位置'+tem);
         return tem;
 
+    },
+    WhoHasTheValue:function(data,id){
+        var temObj = null;
+        for(var i=0;i<data.length;i++){
+            if(data[i].idNumber=id){
+            temObj=data[i];
+            }
+        }
+        console.log('temObj'+temObj);
+        return temObj;
     }
 
 

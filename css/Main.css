@@ -385,7 +385,7 @@ li {
   background-position: -206px -73px;
 }
 #Main-border {
-  margin-top: 50px;
+  margin-top: -18px;
   margin-left: 210px;
   position: relative;
   box-shadow: -1px 0 3px #aaa;
@@ -415,6 +415,7 @@ li {
   line-height: normal;
 }
 #Main-border #Tools-bar #Tools .Upload {
+  float: left;
   width: 106px;
   color: #fff;
   -webkit-border-radius: 3px;
@@ -430,6 +431,93 @@ li {
   vertical-align: middle;
   height: 24px;
   width: 20px;
+}
+#Main-border #Tools-bar #Tools .Upload:hover {
+  background: url("../img/button.png") no-repeat right -682px;
+}
+#Main-border #Tools-bar #Tools .Upload:hover span {
+  background: url("../img/uploadCreate.png");
+}
+#Main-border #Tools-bar #Tools .NewFolder {
+  float: left;
+  width: 114px;
+  border-right: 2px solid #c6c8cc;
+  color: #666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: url("../img/button.png") no-repeat 0 -144px;
+}
+#Main-border #Tools-bar #Tools .NewFolder span {
+  background: url("../img/uploadCreate.png") -150px 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 18px;
+  vertical-align: middle;
+  height: 24px;
+  width: 20px;
+}
+#Main-border #Tools-bar #Tools .NewFolder:hover {
+  background: url("../img/button.png") no-repeat 0 -180px;
+}
+#Main-border #Tools-bar #Tools .NewFolder:hover span {
+  background: url("../img/uploadCreate.png") -180px 0;
+}
+#Main-border #Tools-bar #Tools .Lixian {
+  float: left;
+  width: 114px;
+  border-right: 2px solid #c6c8cc;
+  color: #666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: url("../img/button.png") no-repeat 0 -144px;
+}
+#Main-border #Tools-bar #Tools .Lixian span {
+  background: url("../img/lixian.png");
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 18px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+  height: 24px;
+  width: 20px;
+}
+#Main-border #Tools-bar #Tools .Lixian:hover {
+  background: url("../img/button.png") no-repeat 0 -180px;
+}
+#Main-border #Tools-bar #Tools .Lixian:hover span {
+  background: url("../img/lixian.png") -30px 0;
+}
+#Main-border #Tools-bar #Tools .Mydevice {
+  float: left;
+  width: 114px;
+  border-left: 2px solid #c6c8cc;
+  color: #666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: url("../img/button.png") no-repeat;
+  background-position-y: -260px;
+  background-position-x: -83px;
+}
+#Main-border #Tools-bar #Tools .Mydevice span {
+  background: url("../img/lixian.png") -60px 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 18px;
+  margin-bottom: 1px;
+  vertical-align: middle;
+  height: 24px;
+  width: 20px;
+}
+#Main-border #Tools-bar #Tools .Mydevice:hover {
+  background: url("../img/button.png") no-repeat;
+  background-position-y: -296px;
+  background-position-x: -83px;
+}
+#Main-border #Tools-bar #Tools .Mydevice:hover span {
+  background: url("../img/lixian.png") -90px 0px;
 }
 #Main-border #Tools-bar .list-gird-switch {
   margin: 8px 0 0 0;
