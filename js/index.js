@@ -263,6 +263,7 @@ function F_deleteBehind(Arr,number) {
 }
 
 function F_createNewFolder() {
-    //数据层 新建 这时候跟 i有关了 卧槽。。。。 如果删除了 那么个数 与id德福安息就 崩溃了   
-    //
+    //数据层 新建 这时候跟 i有关了 卧槽。。。
+
+
 }
