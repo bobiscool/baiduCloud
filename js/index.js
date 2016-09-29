@@ -68,28 +68,28 @@ O_Gswich.addEventListener('click',function(){
 O_NameUD.addEventListener('click',function (){
     if(O_NameUD.getElementsByTagName('span')[0].className == 'Down'){
         O_NameUD.getElementsByTagName('span')[0].className = 'Up';
-        F_RenderData(childs,'n','Title','Up');
+        F_RenderData(JsonData,F_findlevel(),'Title','Up');
     }else{
         O_NameUD.getElementsByTagName('span')[0].className = 'Down';
-        F_RenderData(childs,'n','Title','down');
+        F_RenderData(JsonData,F_findlevel(),'Title','down');
     }
 });
 O_CapUD.addEventListener('click',function () {
     if(O_CapUD.getElementsByTagName('span')[0].className == 'Down'){
         O_CapUD.getElementsByTagName('span')[0].className = 'Up';
-        F_RenderData(childs,'n','Cap','Up');
+        F_RenderData(JsonData,F_findlevel(),'Cap','Up');
     }else{
         O_CapUD.getElementsByTagName('span')[0].className = 'Down';
-        F_RenderData(childs,'n','Cap','down');
+        F_RenderData(JsonData,F_findlevel(),'Cap','down');
     }
 });
 O_TimeUD.addEventListener('click',function () {
     if(O_TimeUD.getElementsByTagName('span')[0].className == 'Down'){
         O_TimeUD.getElementsByTagName('span')[0].className = 'Up';
-        F_RenderData(childs,'n','Time','Up');
+        F_RenderData(JsonData,F_findlevel(),'Time','Up');
     }else{
         O_TimeUD.getElementsByTagName('span')[0].className = 'Down';
-        F_RenderData(childs,'n','Time','down');
+        F_RenderData(JsonData,F_findlevel(),'Time','down');
     }
 });
 O_selectAll.addEventListener('click',function (ev){
@@ -100,6 +100,7 @@ O_selectAll.addEventListener('click',function (ev){
             F_toSelectAllNot();
         }
 });//全选建
+var OviewDl = document.getElementsByTagName('dl')[0];
 setInterval(function () {
     F_ChangeTheToolBar();
     O_Howmany.innerHTML =OA_Group.length;
@@ -151,9 +152,10 @@ O_Navtitleul.addEventListener('click',function (ev) {
 
 });
 
-O_NewFolder.addEventListener('click',function(ev){
+O_NewFolder.addEventListener('mouseup',function(ev){
     if(F_Tool.parents(ev.target,'.NewFolder')){
         //function new folder
+        F_createNewFolder();
     }
 });
 
@@ -173,6 +175,7 @@ function F_ShowWho(showwho) {
 
 function F_RenderData(data,renderId,Attr,UD){
     clearAll();//不知道这样设置 是否是个坑  一旦重新渲染 就清空
+    OviewDl = document.getElementsByTagName('dl')[0];
     // console.log(data);
     var tempData='';
     var html="";
@@ -182,7 +185,7 @@ function F_RenderData(data,renderId,Attr,UD){
     }else{
         // console.log(data);
         // console.log(childs);
-        childs =  F_manageData.UpOrDown(data,Attr,UD);  //两种渲染模式  一种是渲染子集  一种是渲染 当前 数据
+        childs =  F_manageData.UpOrDown(data,Attr,UD);  //两种渲染模式  一种是渲染子集  一种是渲染 当前 数据  现在没用它
     }
 
     childs.map(function (item) {
@@ -270,12 +273,22 @@ function F_createNewFolder() {
     IdNumber++;
     //数据层
     var newData={};
-    newData.pid = OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];//现在所处文件夹的位置
+    newData.pid = F_findlevel();//现在所处文件夹的位置
     newData.Time=  newData.Time = Time.getHours() + ':' + Time.getMinutes() + ':' + Time.getSeconds();
     newData.Cap = 'O__O "…';
-    newData.Title='新建文件夹'+idNumber;
+    newData.Title='新建文件夹'+IdNumber;
     newData.Type ='Drec';
+    newData.idNumber = IdNumber;
     JsonData.push(newData);
-    //DOM 阶段
+    //DOM 阶段 新建 一个 DOM 添加一个修改界面
+    var temDOM = document.createElement('dd');
+    temDOM.className ='Unclick';
+    temDOM.innerHTML = renderData.CreatNewFolder(newData);
+    console.log(temDOM);
+    Oview.getElementsByTagName('dl')[0].insertBefore(temDOM,  Oview.getElementsByTagName('dl')[0].firstChild);
+    console.log(OviewDl);
 }
 
+function  F_findlevel() {
+    return OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];
+}
