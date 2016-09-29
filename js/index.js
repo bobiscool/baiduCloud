@@ -22,6 +22,7 @@ var O_NewFolder = document.getElementsByClassName('NewFolder')[0];
 var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
+var IdNumber = JsonData.length;
 // console.log(O_Howmany);
 
 F_RenderData(JsonData,0,'Cap','Up');
@@ -264,6 +265,17 @@ function F_deleteBehind(Arr,number) {
 
 function F_createNewFolder() {
     //数据层 新建 这时候跟 i有关了 卧槽。。。
-
-
+    //点击新建IDnumber就加1
+    var Time = new Date();
+    IdNumber++;
+    //数据层
+    var newData={};
+    newData.pid = OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];//现在所处文件夹的位置
+    newData.Time=  newData.Time = Time.getHours() + ':' + Time.getMinutes() + ':' + Time.getSeconds();
+    newData.Cap = 'O__O "…';
+    newData.Title='新建文件夹'+idNumber;
+    newData.Type ='Drec';
+    JsonData.push(newData);
+    //DOM 阶段
 }
+
