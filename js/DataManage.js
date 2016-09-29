@@ -151,11 +151,11 @@ var F_manageData ={
     WhoHasTheValue:function(data,id){
         var temObj = null;
         for(var i=0;i<data.length;i++){
-            if(data[i].idNumber=id){
+            if(data[i].idNumber==id){
             temObj=data[i];
             }
         }
-        console.log('temObj'+temObj);
+        console.log(temObj);
         return temObj;
     }
 

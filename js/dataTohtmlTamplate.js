@@ -28,6 +28,7 @@ var renderData = {// 利用EC6的特性  生成模板函数
                         <div class="${itemData.Type}">
                                 <span></span>
                         </div>
+                       
                         <span class="File-Title">${itemData.Title}</span>
                          <span class="File-more">${itemData.Cap}</span>
                         <span class="File-more">${itemData.Time}</span>

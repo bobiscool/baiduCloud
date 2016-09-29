@@ -25,7 +25,7 @@ var OA_NowWhere = [];
 var IdNumber = JsonData.length;
 // console.log(O_Howmany);
 
-F_RenderData(JsonData,0,'Cap','Up');
+//F_RenderData(JsonData,0,'Cap','Up');
 
 // setInterval(function(){
 //     F_ChangeTheToolBar(OA_Group);
@@ -242,9 +242,9 @@ function clearAll() {
 function F_createNav(){//id 与 第几个是对应得 但是 是减去一的关系!!!!!
     O_Navtitleul.innerHTML=renderData.StaticHtml(OA_NowWhere);
     OA_NowWhere.forEach(function (item) {
-       O_Navtitleul.innerHTML +=renderData.crNav(JsonData[item-1]);
+       O_Navtitleul.innerHTML +=renderData.crNav(F_manageData.WhoHasTheValue(JsonData,item));
+       console.dir(JsonData[item-1]);
     });
-    // console.log(OA_NowWhere);
 }
 
 
