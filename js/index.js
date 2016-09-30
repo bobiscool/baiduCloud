@@ -25,7 +25,7 @@ var OA_NowWhere = [];
 var IdNumber = JsonData.length;
 // console.log(O_Howmany);
 
-//F_RenderData(JsonData,0,'Cap','Up');
+F_RenderData(JsonData,0,'Cap','Up');
 
 // setInterval(function(){
 //     F_ChangeTheToolBar(OA_Group);
@@ -296,5 +296,5 @@ function  F_findlevel() {
 function F_changeName(targetid) {
     //点击重命名时  先是隐藏现在的标题 然后是 显示value  vlue 就是 现在所在id的name
     //当点击  编辑时  显示 input框  然后 后面跟着 勾和叉
-    
+
 }

@@ -691,7 +691,7 @@ li {
 #Main-border .UchoosedItemList .Item-type {
   margin-left: -3px;
   display: inline-block;
-  width: 20%;
+  width: 25%;
   height: 100%;
   border-right: #dce1e6 1px solid;
   border-left: #f4f6f8 1px solid;
@@ -738,11 +738,101 @@ li {
   display: inline-block;
 }
 #Main-border .Gird-view dl dd .Ob {
-  width: 142px;
+  width: 182px;
   height: 122px;
   float: left;
   margin: 4px 4px 0 0;
   text-align: center;
+}
+#Main-border .Gird-view dl dd .Ob .File-Title {
+  float: left;
+  width: 100%;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditArea {
+  float: left;
+  width: 100px;
+  margin-left: 30px;
+  display: inline-block;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditArea input {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditArea span {
+  display: inline-block;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditOp {
+  float: left;
+  display: inline-block;
+  width: 30px;
+  margin-left: 10px;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditOp span:nth-child(1) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditOp span:nth-child(2) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit .EditOp span:nth-child(3) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit:hover .EditOp {
+  float: left;
+  display: inline-block;
+  width: 30px;
+  margin-left: 10px;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(1) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  background: url("../img/edit.png");
+}
+#Main-border .Gird-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(2) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(3) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditArea {
+  float: left;
+  width: 100px;
+  display: inline-block;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditArea input {
+  display: inline-block;
+  width: 70px;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditArea .Name {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditOp {
+  float: left;
+  width: 60px;
+  margin-left: 10px;
+  display: inline-block;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditOp span:nth-child(1) {
+  display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditOp span:nth-child(2) {
+  display: inline-block;
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 0px;
+  background: url(../img/btn.png);
+  background-position-x: -6px;
+  background-position-y: 26px;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditOp span:nth-child(3) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 0px;
+  background: url(../img/btn.png);
+  background-position-x: -33px;
+  background-position-y: 26px;
 }
 #Main-border .Gird-view dl dd .Ob .File-more {
   display: none;
@@ -752,7 +842,7 @@ li {
   margin: 0 auto;
   width: 90px;
   height: 92px;
-  border: 2px solid #FFF;
+  border: 2px solid transparent;
   overflow: hidden;
 }
 #Main-border .Gird-view dl .Unclick .Ob div span {
@@ -932,7 +1022,75 @@ li {
   margin-left: 10px;
   display: inline-block;
   float: left;
-  width: 20%;
+  width: 25%;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditArea {
+  float: left;
+  width: 60%;
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditArea input {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditArea span {
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp {
+  float: left;
+  display: inline-block;
+  width: 40%;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(1) {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  background: url("../img/edit.png");
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(2) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(3) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditArea {
+  float: left;
+  width: 50%;
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditArea input {
+  display: inline-block;
+  width: 70px;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditArea .Name {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditOp {
+  float: left;
+  width: 40%;
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditOp span:nth-child(1) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditOp span:nth-child(2) {
+  display: inline-block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background: url(../img/btn.png);
+  background-position-x: -2px;
+  background-position-y: 26px;
+}
+#Main-border .List-view dl dd .Ob .Editing .EditOp span:nth-child(3) {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background: url(../img/btn.png);
+  background-position-x: -31px;
+  background-position-y: 26px;
 }
 #Main-border .List-view dl dd .Ob .File-more {
   margin-left: 20px;
