@@ -1325,11 +1325,7 @@ li {
                 display: inline-block;
                 width:40%;
                 span:nth-child(1){
-                  display: inline-block;
-                  width: 24px;
-                  height: 24px;
-                  margin-top: -5px;
-                  background: url("../img/edit.png");
+                  display: none;
                 }
 
                 span:nth-child(2){
@@ -1343,6 +1339,43 @@ li {
 
           }
 
+
+          .Uedit:hover {
+            .EditArea {
+              float: left;
+              width:60%;
+              display: inline-block;
+              input{
+                display: none;
+              }
+              span {
+                display: inline-block;
+              }
+            }
+
+
+            .EditOp {
+              float: left;
+              display: inline-block;
+              width:40%;
+              span:nth-child(1){
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin-top: -5px;
+                background: url("../img/edit.png");
+              }
+
+              span:nth-child(2){
+                display: none;
+              }
+
+              span:nth-child(3){
+                display: none;
+              }
+            }
+
+          }
           .Editing {
             .EditArea {
               float: left;

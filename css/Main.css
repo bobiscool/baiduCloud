@@ -1041,16 +1041,41 @@ li {
   width: 40%;
 }
 #Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(1) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(2) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(3) {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditArea {
+  float: left;
+  width: 60%;
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditArea input {
+  display: none;
+}
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditArea span {
+  display: inline-block;
+}
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditOp {
+  float: left;
+  display: inline-block;
+  width: 40%;
+}
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(1) {
   display: inline-block;
   width: 24px;
   height: 24px;
   margin-top: -5px;
   background: url("../img/edit.png");
 }
-#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(2) {
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(2) {
   display: none;
 }
-#Main-border .List-view dl dd .Ob .Uedit .EditOp span:nth-child(3) {
+#Main-border .List-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(3) {
   display: none;
 }
 #Main-border .List-view dl dd .Ob .Editing .EditArea {

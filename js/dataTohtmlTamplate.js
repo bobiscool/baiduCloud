@@ -42,14 +42,25 @@ var renderData = {// 利用EC6的特性  生成模板函数
     },
     CreatNewFolder:function(itemData){
         return `<div class="Ob" data-fileid="${itemData.idNumber}" data-filetype="${itemData.Type}" data-pidNum="${itemData.pid}">
-                        <div class="${itemData.Type}">
-                                <span></span>
-                        </div>
-                       
-                        <span class="File-Title">${itemData.Title}</span>
-                         <span class="File-more">${itemData.Cap}</span>
-                        <span class="File-more">${itemData.Time}</span>
-                        </div>`;
+
+            <div class="${itemData.Type}">
+            <span></span>
+            </div>
+            <span class="File-Title Uedit">
+            <span class="EditArea">
+            <input type="text" class="inputBox" placeholder="dsfsdfsdfs" value="dsfsdfsdfs">
+            <span class="Name">${itemData.Title}</span>
+            <span class="Type"></span>
+            </span>
+            <span class="EditOp">
+            <span class="EditButon"></span>
+            <span class="ConfirmButton"></span>
+            <span class="OkButton"></span>
+            </span>
+            </span>
+            <span class="File-more">${itemData.Cap}</span>
+            <span class="File-more">${itemData.Time}</span>
+            </div>`;
 
     }
 
