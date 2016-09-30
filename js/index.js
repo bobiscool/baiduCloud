@@ -113,14 +113,36 @@ setInterval(function () {
 
 Oview.addEventListener('click',function (ev) {
     var tem = F_Tool.parents(ev.target,'.Ob');
-    if(tem){
-        if(ev.target.className!=''&&tem.dataset.filetype=='Drec'){
+    var temEdit = F_Tool.parents(ev.target,'.EditOp');
+    var teminput = ev.target;
+
+
+    console.log(teminput);
+
+
+    if(teminput.className='ConfirmButton') {//如果点击了 input
+        console.log('点击了 ConfirmButton');
+    }
+
+    if(teminput.className='OkButton') {//如果点击了 input
+        console.log('点击了 OkButton');
+    }
+
+    if(teminput.className='inputbox') {//如果点击了 input
+        console.log('点击了 input');
+    }
+
+     //这是input 不存在的时候
+
+
+    if(tem&&!temEdit&&teminput.targetName!='INPUT'){// 除了点击 edit以外的位置
+        if(ev.target.className!=''&&tem.dataset.filetype=='Drec'){//点击文件夹
             F_RenderData(JsonData,tem.dataset.fileid,'Title','down');
             OA_NowWhere.push(tem.dataset.fileid);//保存ID
             F_createNav();
             //OA_Group = [];
             //这个地方就得 开始渲染导航框了
-        }else{
+        }else{//点击 文件
             //push进入数组  开始打打勾 第二次点击 就取消打勾
             F_Tool.toggleClass(F_Tool.parents(ev.target,'dd'),'Unclick','Clicked');
             // console.log(tem);
@@ -133,7 +155,16 @@ Oview.addEventListener('click',function (ev) {
             }//判断 是否全选
 
         }
+
     }
+
+
+
+    if(temEdit){//点击了edit
+        F_Tool.parents(temEdit,'.File-Title').className = 'File-Title Editing'
+    }
+
+
 });//文件点击操作
 
 O_Navtitleul.addEventListener('click',function (ev) {
