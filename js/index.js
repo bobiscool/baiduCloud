@@ -23,6 +23,7 @@ var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
 var IdNumber = JsonData.length;
+var NowEdit = null;
 // console.log(O_Howmany);
 
 F_RenderData(JsonData,0,'Cap','Up');
@@ -111,20 +112,18 @@ setInterval(function () {
     }
 },50);
 
-document.addEventListener('click',function (ev) {
 
-});
 Oview.addEventListener('click',function (ev) {
     var tem = F_Tool.parents(ev.target,'.Ob');
    // var temEdit = F_Tool.parents(ev.target,'.EditButon');
     var temObj = ev.target;
-    console.log(temObj.tagName);
     if(temObj.className=='EditButon'){//点击了edit
         console.log('点击了EditButon');
         F_Tool.parents(temObj,'.File-Title').className ='File-Title Editing';
         var teminput =F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0];
         teminput.value = F_Tool.parents(temObj,'.File-Title').getElementsByClassName('Name')[0].innerHTML;
         F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
+
         return false;
     }
 
@@ -156,17 +155,12 @@ Oview.addEventListener('click',function (ev) {
 
         return false;
     }
-    
-    
+
+
     if(temObj.className=='OkButton') {//如果点击了 取消键
         F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
         return false;
     }
-
-
-
-
-
 
 
 
@@ -224,7 +218,15 @@ O_NewFolder.addEventListener('mouseup',function(ev){
         F_createNewFolder();
     }
 });
-
+Oview.addEventListener('mousedown',function (ev) {
+    var temObj = document.getElementsByClassName('Editing')[0];
+    console.log(temObj);
+    if(temObj){
+        F_EditClick(ev,temObj);
+    }
+});
+//现在需要写一个 函数 当我点击 除了input框之外 ,还有取消键之外的东西 他的效果就是 确认键效果
+//不过这个监听 应该是 我在 添加了edit之后
 
 //点击事件区域
 
@@ -359,4 +361,32 @@ function  F_findlevel() {
     return OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];
 }
 
+
+function F_EditClick(ev,temObj) {
+    if(ev.target.tagName=='INPUT'){
+        console.log('do nothing');
+    }else if(ev.target.className=='ConfirmButton') {//如果点击了 input
+        console.log(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length);
+        if(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length>8||F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length<=3){
+            alert('文件名称限制3-10位!');
+            F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
+        }
+        var temTime = new Date();
+        var temdata =F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid)
+        console.log(F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid));
+        temdata.Title = F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
+
+        temdata.Time = temTime.getHours()+":"+temTime.getMinutes()+':'+temTime.getSeconds();
+
+        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
+        tem.getElementsByClassName('File-more')[1].innerHTML = temdata.Time;
+        F_Tool.parents(temObj,'.File-Title').getElementsByClassName('Name')[0].innerHTML= F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
+
+
+    }else{
+        console.log(temObj);
+        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
+    }
+
+}
 
