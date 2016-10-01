@@ -137,8 +137,8 @@ Oview.addEventListener('click',function (ev) {
 
     if(temObj.className=='ConfirmButton') {//如果点击了 input
         console.log(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length);
-        if(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length>8||F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length<=3){
-            alert('文件名称限制3-10位!');
+        if(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length>8||F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length<3){
+            alert('文件名称限制3-8位!');
             F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
         return false;
         }
@@ -168,7 +168,7 @@ Oview.addEventListener('click',function (ev) {
      //这是input 不存在的时候
 
 
-    if(tem&&temObj.tagName!='INPUT'){// 除了点击 edit以外的位置
+    if(tem&&temObj.tagName!='INPUT'&&temObj.className!='OkButton'){// 除了点击 edit以外的位置
         if(ev.target.className!=''&&tem.dataset.filetype=='Drec'){//点击文件夹
             F_RenderData(JsonData,tem.dataset.fileid,'Title','down');
             OA_NowWhere.push(tem.dataset.fileid);//保存ID
@@ -218,11 +218,14 @@ O_NewFolder.addEventListener('mouseup',function(ev){
         F_createNewFolder();
     }
 });
-Oview.addEventListener('mousedown',function (ev) {
+document.addEventListener('mousedown',function (ev) {
     var temObj = document.getElementsByClassName('Editing')[0];
     console.log(temObj);
     if(temObj){
-        F_EditClick(ev,temObj);
+        if(ev.target.tagName!='INPUT'&&ev.target.className!='ConfirmButton')        {
+            console.log(temObj);
+           temObj.className = 'File-Title Uedit';
+        }
     }
 });
 //现在需要写一个 函数 当我点击 除了input框之外 ,还有取消键之外的东西 他的效果就是 确认键效果
@@ -361,32 +364,4 @@ function  F_findlevel() {
     return OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];
 }
 
-
-function F_EditClick(ev,temObj) {
-    if(ev.target.tagName=='INPUT'){
-        console.log('do nothing');
-    }else if(ev.target.className=='ConfirmButton') {//如果点击了 input
-        console.log(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length);
-        if(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length>8||F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length<=3){
-            alert('文件名称限制3-10位!');
-            F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
-        }
-        var temTime = new Date();
-        var temdata =F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid)
-        console.log(F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid));
-        temdata.Title = F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
-
-        temdata.Time = temTime.getHours()+":"+temTime.getMinutes()+':'+temTime.getSeconds();
-
-        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
-        tem.getElementsByClassName('File-more')[1].innerHTML = temdata.Time;
-        F_Tool.parents(temObj,'.File-Title').getElementsByClassName('Name')[0].innerHTML= F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
-
-
-    }else{
-        console.log(temObj);
-        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
-    }
-
-}
 

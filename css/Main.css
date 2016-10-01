@@ -663,11 +663,56 @@ li {
 #Main-border .ChoosedItem .Item-Operate {
   display: inline-block;
   margin-left: 10px;
-  border: 2px solid red;
-  border-radius: 10px;
+  border-radius: 3px;
+  border-right: 2px solid rgba(178, 178, 178, 0.57);
+  background: url('../img/button.png') no-repeat 5px -143px;
   padding: 5px;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  width: 78px;
   height: 20px;
   line-height: 20px;
+}
+#Main-border .ChoosedItem .Item-Operate span:nth-child(1) {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  margin-right: 5px;
+  height: 24px;
+  background: url(../img/lixian.png ) -180px 0 no-repeat;
+}
+#Main-border .ChoosedItem .Item-Operate span:nth-child(2) {
+  vertical-align: middle;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+#Main-border .ChoosedItem .B-Share span:nth-child(1) {
+  background: url(../img/lixian.png ) -180px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Share:hover span:nth-child(1) {
+  background: url(../img/lixian.png ) -240px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Download span:nth-child(1) {
+  background: url(../img/uploadCreate.png ) -60px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Download:hover span:nth-child(1) {
+  background: url(../img/uploadCreate.png ) -120px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Delete span:nth-child(1) {
+  background: url(../img/uploadCreate.png ) -210px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Delete:hover span:nth-child(1) {
+  background: url(../img/uploadCreate.png ) -270px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Push span:nth-child(1) {
+  background: url(../img/lixian.png ) -120px 0 no-repeat;
+}
+#Main-border .ChoosedItem .B-Push:hover span:nth-child(1) {
+  background: url(../img/lixian.png ) -150px 0 no-repeat;
 }
 #Main-border .ChoosedItem .Item-type {
   display: none;
@@ -764,7 +809,7 @@ li {
   float: left;
   display: inline-block;
   width: 30px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 #Main-border .Gird-view dl dd .Ob .Uedit .EditOp span:nth-child(1) {
   display: none;
@@ -779,7 +824,7 @@ li {
   float: left;
   display: inline-block;
   width: 30px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 #Main-border .Gird-view dl dd .Ob .Uedit:hover .EditOp span:nth-child(1) {
   display: inline-block;
@@ -796,7 +841,7 @@ li {
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditArea {
   float: left;
-  width: 100px;
+  width: 110px;
   display: inline-block;
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditArea input {
@@ -814,7 +859,7 @@ li {
 #Main-border .Gird-view dl dd .Ob .Editing .EditOp {
   float: left;
   width: 60px;
-  margin-left: 10px;
+  margin-left: 0;
   display: inline-block;
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditOp .EditButon {
