@@ -111,31 +111,70 @@ setInterval(function () {
     }
 },50);
 
+document.addEventListener('click',function (ev) {
+
+});
 Oview.addEventListener('click',function (ev) {
     var tem = F_Tool.parents(ev.target,'.Ob');
-    var temEdit = F_Tool.parents(ev.target,'.EditOp');
-    var teminput = ev.target;
-
-
-    console.log(teminput);
-
-
-    if(teminput.className='ConfirmButton') {//如果点击了 input
-        console.log('点击了 ConfirmButton');
+   // var temEdit = F_Tool.parents(ev.target,'.EditButon');
+    var temObj = ev.target;
+    console.log(temObj.tagName);
+    if(temObj.className=='EditButon'){//点击了edit
+        console.log('点击了EditButon');
+        F_Tool.parents(temObj,'.File-Title').className ='File-Title Editing';
+        var teminput =F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0];
+        teminput.value = F_Tool.parents(temObj,'.File-Title').getElementsByClassName('Name')[0].innerHTML;
+        F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
+        return false;
     }
 
-    if(teminput.className='OkButton') {//如果点击了 input
-        console.log('点击了 OkButton');
-    }
-
-    if(teminput.className='inputbox') {//如果点击了 input
+    if(temObj.tagName=='INPUT') {//如果点击了 input
         console.log('点击了 input');
+
+        return false;
     }
+
+
+
+    if(temObj.className=='ConfirmButton') {//如果点击了 input
+        console.log(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length);
+        if(F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length>8||F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value.length<=3){
+            alert('文件名称限制3-10位!');
+            F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].focus();
+        return false;
+        }
+        var temTime = new Date();
+        var temdata =F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid)
+        console.log(F_manageData.WhoHasTheValue(JsonData,tem.dataset.fileid));
+       temdata.Title = F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
+
+        temdata.Time = temTime.getHours()+":"+temTime.getMinutes()+':'+temTime.getSeconds();
+
+        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
+        tem.getElementsByClassName('File-more')[1].innerHTML = temdata.Time;
+        F_Tool.parents(temObj,'.File-Title').getElementsByClassName('Name')[0].innerHTML= F_Tool.parents(temObj,'.File-Title').getElementsByTagName('input')[0].value;
+
+        return false;
+    }
+    
+    
+    if(temObj.className=='OkButton') {//如果点击了 取消键
+        F_Tool.parents(temObj,'.File-Title').className ='File-Title Uedit';
+        return false;
+    }
+
+
+
+
+
+
+
+
 
      //这是input 不存在的时候
 
 
-    if(tem&&!temEdit&&teminput.targetName!='INPUT'){// 除了点击 edit以外的位置
+    if(tem&&temObj.tagName!='INPUT'){// 除了点击 edit以外的位置
         if(ev.target.className!=''&&tem.dataset.filetype=='Drec'){//点击文件夹
             F_RenderData(JsonData,tem.dataset.fileid,'Title','down');
             OA_NowWhere.push(tem.dataset.fileid);//保存ID
@@ -159,10 +198,6 @@ Oview.addEventListener('click',function (ev) {
     }
 
 
-
-    if(temEdit){//点击了edit
-        F_Tool.parents(temEdit,'.File-Title').className = 'File-Title Editing'
-    }
 
 
 });//文件点击操作
@@ -324,8 +359,4 @@ function  F_findlevel() {
     return OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];
 }
 
-function F_changeName(targetid) {
-    //点击重命名时  先是隐藏现在的标题 然后是 显示value  vlue 就是 现在所在id的name
-    //当点击  编辑时  显示 input框  然后 后面跟着 勾和叉
 
-}

@@ -39,7 +39,7 @@ var JsonData = (function () {
         if (call == "Drec") {//如果是目录文件 那么在目录文件 出 加 上他
             MaybeParent.push(i);
         }
-        newData.Title = randomWord(true, 3, 10);
+        newData.Title = randomWord(true, 3, 7);
         newData.Type = call;
         newData.Time = Time.getHours() + ':' + Time.getMinutes() + ':' + Time.getSeconds();
         if (call == "Drec") {

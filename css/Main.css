@@ -801,10 +801,15 @@ li {
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditArea input {
   display: inline-block;
-  width: 70px;
+  float: left;
+  width: 60px;
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditArea .Name {
   display: none;
+}
+#Main-border .Gird-view dl dd .Ob .Editing .EditArea .Type {
+  display: inline-block;
+  float: left;
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditOp {
   float: left;
@@ -812,7 +817,7 @@ li {
   margin-left: 10px;
   display: inline-block;
 }
-#Main-border .Gird-view dl dd .Ob .Editing .EditOp span:nth-child(1) {
+#Main-border .Gird-view dl dd .Ob .Editing .EditOp .EditButon {
   display: none;
 }
 #Main-border .Gird-view dl dd .Ob .Editing .EditOp span:nth-child(2) {
@@ -1095,7 +1100,7 @@ li {
   width: 40%;
   display: inline-block;
 }
-#Main-border .List-view dl dd .Ob .Editing .EditOp span:nth-child(1) {
+#Main-border .List-view dl dd .Ob .Editing .EditOp .EditButon {
   display: none;
 }
 #Main-border .List-view dl dd .Ob .Editing .EditOp span:nth-child(2) {
