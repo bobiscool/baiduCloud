@@ -19,11 +19,15 @@ var O_Howmany = document.getElementById('Howmany');
 var O_Navtitle = document.getElementById('Nav-title');
 var O_Navtitleul = document.getElementById('Nav-title-ul');
 var O_NewFolder = document.getElementsByClassName('NewFolder')[0];
+var O_Delete = document.getElementsByClassName('B-Delete')[0];
+var O_Confirm = document.getElementById('Confirm');
+var O_Mask = document.getElementById('Mask');
 var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
 var IdNumber = JsonData.length;
 var NowEdit = null;
+var Deleted = [];
 // console.log(O_Howmany);
 
 F_RenderData(JsonData,0,'Cap','Up');
@@ -101,6 +105,7 @@ O_selectAll.addEventListener('click',function (ev){
             F_toSelectAllNot();
         }
 });//全选建
+
 var OviewDl = document.getElementsByTagName('dl')[0];
 setInterval(function () {
     F_ChangeTheToolBar();
@@ -218,6 +223,30 @@ O_NewFolder.addEventListener('mouseup',function(ev){
         F_createNewFolder();
     }
 });
+
+O_Delete.addEventListener('click',function(){
+    O_Mask.style.display = 'block';
+     O_Confirm.addEventListener('click',function(ev){
+            if(ev.target.className=="Cb CB-Ac"){
+                O_Mask.style.display = 'none';
+                //执行删除
+
+                F_DeleteData();
+                
+            }
+         if(ev.target.className=="Cb CB-Ua"){
+             O_Mask.style.display = 'none';
+         }
+     })
+
+});
+
+
+
+
+
+
+
 document.addEventListener('mousedown',function (ev) {
     var temObj = document.getElementsByClassName('Editing')[0];
     console.log(temObj);
@@ -228,6 +257,7 @@ document.addEventListener('mousedown',function (ev) {
         }
     }
 });
+
 //现在需要写一个 函数 当我点击 除了input框之外 ,还有取消键之外的东西 他的效果就是 确认键效果
 //不过这个监听 应该是 我在 添加了edit之后
 
@@ -364,4 +394,27 @@ function  F_findlevel() {
     return OA_NowWhere.length==0?0:OA_NowWhere[OA_NowWhere.length-1];
 }
 
+function F_DeleteData() {
+    //通过ID找到他们的值
+    var Ad = document.getElementsByClassName('Ob');
+    console.log(Ad);
+    console.log(OviewDl);
+    OA_Group.map(function(item){
+      var i=F_manageData.whereTheValue(JsonData,F_manageData.WhoHasTheValue(JsonData,item));//为了赶时间   写了一个恶心的算法  见谅 见谅
+        if(JsonData[i]){
+            Deleted.push(JsonData[i]);
+            JsonData.splice(i,1);
+        }
 
+
+
+
+        for(var j=0;j<Ad.length;j++){
+            console.log(Ad[j].parentNode);
+            if(Ad[j].dataset.fileid == item){
+                OviewDl.removeChild(Ad[j].parentNode);
+            }
+        }
+    });
+
+}
