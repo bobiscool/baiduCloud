@@ -24,6 +24,8 @@ var O_Confirm = document.getElementById('Confirm');
 var O_Mask = document.getElementById('Mask');
 var O_Cash = document.getElementById('Cash');
 var O_ToolsBar = document.getElementById('Tools');
+var O_ScroolBar = document.getElementById('Scrollbar');
+var O_Scroolspan = O_ScroolBar.getElementsByTagName('span')[0];
 var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
@@ -31,6 +33,7 @@ var IdNumber = JsonData.length;
 var NowEdit = null;
 var newDiv = null;
 var Deleted = [];
+var Alldeleted = [];
 var disX = 0;
 var disY =0;
 // console.log(O_Howmany);
@@ -47,7 +50,7 @@ OItemList.addEventListener('click', function (ev) {
     O_Operation.style.display = 'block';
     O_Navtitleul.style.display = "block";
     if (ev.target.tagName == 'LI') {
-
+        F_scroolBar();
         F_Tool.removeClass(Old, 'active');
         F_Tool.addClass(ev.target, 'active');
         F_ShowWho(ev.target.dataset.showwhat);
@@ -58,6 +61,7 @@ OItemList.addEventListener('click', function (ev) {
             O_NewFolder.style.display = 'inline-block';
         }
     } else if (F_Tool.parents(ev.target, 'li') != null) {
+        F_scroolBar();
         var tem = F_Tool.parents(ev.target, 'li');
         F_Tool.removeClass(Old, 'active');
         F_Tool.addClass(tem, 'active');
@@ -81,14 +85,17 @@ O_Lswich.addEventListener('click', function () {
     F_Tool.addClass(O_LGswich, 'list-switch-on');
     O_Operation.className = '';
     F_Tool.addClass(O_Operation, 'UchoosedItemList');
+    F_scroolBar();
 });
 O_Gswich.addEventListener('click', function () {
+   // F_scroolBar();
     F_Tool.addClass(Oview, 'Gird-view');
     F_Tool.removeClass(Oview, 'List-view');
     F_Tool.addClass(O_LGswich, 'gird-switch-on');
     F_Tool.removeClass(O_LGswich, 'list-switch-on');
     O_Operation.className = '';
     F_Tool.addClass(O_Operation, 'UchoosedItemGird');
+    F_scroolBar();
 });
 O_NameUD.addEventListener('click', function () {
     if (O_NameUD.getElementsByTagName('span')[0].className == 'Down') {
@@ -137,6 +144,13 @@ O_Cash.onclick = function () {
 };
 
 var OviewDl = document.getElementsByTagName('dl')[0];
+
+F_scroolBar();
+
+window.onresize = function(){
+    Oview.style.height = document.body.clientHeight-170+'px';
+    F_scroolBar();
+};
 setInterval(function () {
     F_ChangeTheToolBar();
     O_Howmany.innerHTML = OA_Group.length;
@@ -268,6 +282,23 @@ O_Delete.addEventListener('click', function () {
 
 Oview.addEventListener('mousedown', F_Down);
 
+O_Scroolspan.onmousedown  = function (ev) {
+    var OviewDl = document.getElementsByTagName('dl')[0];
+    var disY = 0;
+    var disMtS =(ev.clientY-O_ScroolBar.offsetTop)- O_Scroolspan.offsetTop;
+    O_Scroolspan.onmousemove = function(ev){
+        disY = ev.clientY-O_ScroolBar.offsetTop-disMtS;
+        if(disY>=0&&disY<=O_ScroolBar.offsetHeight-O_Scroolspan.offsetHeight){
+            O_Scroolspan.style.top = disY+'px';
+            OviewDl.style.top = -disY*(O_ScroolBar.offsetHeight/O_Scroolspan.offsetHeight)+'px';
+        }
+
+    };
+
+    document.addEventListener('mouseup', F_ScroolUp);
+
+
+};
 
 
 
@@ -304,6 +335,7 @@ function F_ShowWho(showwho) {
 
 function F_RenderData(data, renderId, Attr, UD) {
     clearAll();//不知道这样设置 是否是个坑  一旦重新渲染 就清空
+  //一旦渲染 重新定位
     OviewDl = document.getElementsByTagName('dl')[0];
     // console.log(data);
     var tempData = '';
@@ -326,6 +358,10 @@ function F_RenderData(data, renderId, Attr, UD) {
     });
 
     Oview.innerHTML = '<dl>' + html + '</dl>';
+    // Oview.style.height = document.body.clientHeight-170+'px';
+
+    F_scroolBar();
+
 }//渲染函数
 
 function F_ChangeTheToolBar() {
@@ -427,6 +463,12 @@ function F_DeleteData() {
     console.log(OA_Group);
     OA_Group.map(function (item) {
         var i = F_manageData.whereTheValue(JsonData, F_manageData.WhoHasTheValue(JsonData, item));//为了赶时间   写了一个恶心的算法  见谅 见谅
+      F_manageData.getItChildsAll(JsonData,item);
+        //找到他下面的数据全部删除
+        // Alldeleted.map(function(item){
+        //     var i = F_manageData.whereTheValue(JsonData,item);
+        //     JsonData.splice(i, 1);
+        // });
         if (JsonData[i]) {
             Deleted.push(JsonData[i]);
             JsonData.splice(i, 1);
@@ -442,6 +484,7 @@ function F_DeleteData() {
         }
 
         OA_Group = [];
+        Alldeleted =[];
         O_selectAll.checked = false;
     });
 
@@ -482,16 +525,10 @@ function F_move(ev){
     newDiv.style.left = Math.min(ev.clientX,disX)+'px';
     newDiv.style.top = Math.min(ev.clientY,disY)+'px';
 
-    if(Math.abs(w)>10&&Math.abs(h)>10){
+    if(Math.abs(w)>20&&Math.abs(h)>20){
         newDiv.className = 'tabShow';
-    }else{
-        newDiv.className = 'tabHide';
-    }
-
-
-    // 在移动的过程中 添加碰撞检测
-    var Ad = document.getElementsByClassName('Ob'); 
-    F_Tool.each(Ad,function(item){
+        var Ad = document.getElementsByClassName('Ob');
+        F_Tool.each(Ad,function(item){
             if(F_Tool.Boom(newDiv,item)){
                 //执行模拟点击事件。。。。
                 F_Tool.removeClass(F_Tool.parents(item, 'dd'), 'Unclick');
@@ -514,13 +551,43 @@ function F_move(ev){
                 if(F_manageData.whereTheValue(OA_Group,item.dataset.fileid)!='meiyou'){
                     OA_Group.splice(F_manageData.whereTheValue(OA_Group,item.dataset.fileid),1);
                 }
-            };
-    });
+            }
+        });
+
+    }else{
+        newDiv.className = 'tabHide';
+    }
+
+
+    // 在移动的过程中 添加碰撞检测
 
 }
 
 function F_Up(){
     document.removeEventListener('mousemove',F_move);
     document.removeEventListener('mouseup',F_Up);
+
     newDiv.className = 'tabHide';
+}
+
+function F_scroolBar() {
+
+    var OviewDl = document.getElementsByTagName('dl')[0];
+    console.log(OviewDl.offsetHeight);
+    Oview.style.height = document.body.clientHeight-170+'px';
+    if(OviewDl.offsetHeight>Oview.offsetHeight){
+        O_ScroolBar.style.display = 'inline-block';
+        O_Scroolspan.style.display = 'inline-block';
+        O_ScroolBar.style.height = Oview.offsetHeight+'px';
+        O_Scroolspan.style.height = (O_ScroolBar.offsetHeight*O_ScroolBar.offsetHeight/OviewDl.offsetHeight)+'px';
+        O_Scroolspan.style.top=0;
+    }else {
+        O_ScroolBar.style.display = 'none';
+        O_Scroolspan.style.display = 'none';
+    }
+}
+
+function F_ScroolUp() {
+    O_Scroolspan.onmousemove = null;
+    document.removeEventListener('mouseup',F_ScroolUp);
 }

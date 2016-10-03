@@ -24,15 +24,15 @@ var F_manageData ={
         }
         return newArr;
     },
-    // 获取当前元素的所有父级的名称
-    getParentsNameAll:function(data,CurentId){//curentObj 是一个dom对象!!!
-        var arr =[];
-        while (F_manageData.getItParents(data,CurentId)!=null){
-            CurentId = F_manageData.getItParents(data,CurentId);
-            arr.push(CurentId);
-            console.log('我是temA'+CurentId);
+    // 获取当前文件夹 所有的子集item
+    getItChildsAll:function(data,CurentId){//curentObj 是一个dom对象!!!
+        var arrB= F_manageData.getChildById(data,CurentId);
+        if(arrB){
+
+            arrB.map(function(item){
+                Alldeleted.push(item);//把下面的自己全部拿出来
+                F_manageData.getItChildsAll(data,item.idNumber);});
         }
-        return arr.reverse();
     },
     //获取当前ID是处于第几层
     getLevelById:function(data,CurentId){

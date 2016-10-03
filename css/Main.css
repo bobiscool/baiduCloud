@@ -39,7 +39,7 @@ li {
   width: 100%;
   height: 100%;
   min-width: 1200px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #Top-banner {
   float: left;
@@ -800,14 +800,13 @@ li {
   position: relative;
   left: 25px;
   min-width: 900px;
-  min-height: 1000px;
+  overflow-y: hidden;
 }
 #Main-border .Gird-view dl {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
   margin: 0;
 }
 #Main-border .Gird-view dl dd {
@@ -1075,7 +1074,6 @@ li {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
   margin: 0;
 }
 #Main-border .List-view dl dd {
@@ -1311,6 +1309,33 @@ li {
 }
 #Main-border .List-view dl .xls {
   background-position: 32px -451px;
+}
+#Main-border #Scrollbar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 150px;
+  background: #fff;
+  width: 20px;
+  height: 500px;
+}
+#Main-border #Scrollbar span {
+  display: none;
+  position: absolute;
+  background: #bbbdc1;
+  width: 18px;
+  height: 10px;
+  border: 1px solid #bbbdc1;
+  border-radius: 6px;
+}
+#Main-border #Scrollbar span:hover {
+  display: none;
+  position: absolute;
+  background: #cdf5fd;
+  width: 18px;
+  height: 10px;
+  border: 1px solid #bbbdc1;
+  border-radius: 6px;
 }
 #Mask {
   position: absolute;
