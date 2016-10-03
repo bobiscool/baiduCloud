@@ -82,7 +82,7 @@ var F_Tool = (function(){
         }, getEleRect:function(obj){
             return obj.getBoundingClientRect(); //获取元素 上下左右 距离 对应的页边的距离
         },
-        collisionRect:function(obj1,obj2){  // 判断自己 画的框是否与文件夹 相遇
+        Boom:function(obj1,obj2){  // 判断自己 画的框是否与文件夹 相遇
             var obj1Rect = F_Tool.getEleRect(obj1);
             var obj2Rect = F_Tool.getEleRect(obj2);
 
@@ -109,6 +109,11 @@ var F_Tool = (function(){
 
             var store = localStorage.getItem(namespace);
             return (store && JSON.parse(store)) || [];
+        },
+        each:function(Obj,Callback){
+                for(var i = 0;i<Obj.length;i++){
+                    Callback&&Callback(Obj[i]);
+                }
         },
         hide:function (element){ // 隐藏
             return element.style.display = "none";

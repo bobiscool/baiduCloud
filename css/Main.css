@@ -1378,3 +1378,9 @@ li {
   z-index: 100;
   opacity: 0.5;
 }
+.tabShow {
+  display: inline-block;
+}
+.tabHide {
+  display: none;
+}

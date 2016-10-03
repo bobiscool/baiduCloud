@@ -266,14 +266,14 @@ O_Delete.addEventListener('click', function () {
 
 });
 
-//document.addEventListener('mousedown', F_Down);
+Oview.addEventListener('mousedown', F_Down);
 
 
 
 
-
-
-Oview.addEventListener('mousedown', function (ev) {
+//现在需要写一个 函数 当我点击 除了input框之外 ,还有取消键之外的东西 他的效果就是 确认键效果
+//不过这个监听 应该是 我在 添加了edit之后
+document.addEventListener('mousedown', function (ev) {
     var temObj = document.getElementsByClassName('Editing')[0];
     console.log(temObj);
     if (temObj) {
@@ -282,10 +282,12 @@ Oview.addEventListener('mousedown', function (ev) {
             temObj.className = 'File-Title Uedit';
         }
     }
-});
 
-//现在需要写一个 函数 当我点击 除了input框之外 ,还有取消键之外的东西 他的效果就是 确认键效果
-//不过这个监听 应该是 我在 添加了edit之后
+    ev.preventDefault();
+
+
+
+});
 
 //点击事件区域
 
@@ -458,10 +460,12 @@ function F_Down(ev){
 
         document.body.appendChild(newDiv);
     }
+    ev.preventDefault();//阻止默认行为
 
     newDiv.style.width = 0+'px';
     newDiv.style.height = 0+'px';
-    newDiv.style.display = 'block';
+
+
     newDiv.style.left = disX+'px';
     newDiv.style.top = disY+'px';
 
@@ -478,10 +482,45 @@ function F_move(ev){
     newDiv.style.left = Math.min(ev.clientX,disX)+'px';
     newDiv.style.top = Math.min(ev.clientY,disY)+'px';
 
+    if(Math.abs(w)>10&&Math.abs(h)>10){
+        newDiv.className = 'tabShow';
+    }else{
+        newDiv.className = 'tabHide';
+    }
+
+
+    // 在移动的过程中 添加碰撞检测
+    var Ad = document.getElementsByClassName('Ob'); 
+    F_Tool.each(Ad,function(item){
+            if(F_Tool.Boom(newDiv,item)){
+                //执行模拟点击事件。。。。
+                F_Tool.removeClass(F_Tool.parents(item, 'dd'), 'Unclick');
+                F_Tool.addClass(F_Tool.parents(item, 'dd'), 'Clicked');
+                // console.log(tem);
+                if(F_manageData.whereTheValue(OA_Group,item.dataset.fileid)=='meiyou'){
+                    OA_Group.push(item.dataset.fileid);
+                }
+
+                console.log(F_manageData.getChildById(JsonData, F_findlevel()).length);
+                if (OA_Group.length == F_manageData.getChildById(JsonData, F_findlevel()).length) {
+                    O_selectAll.checked = true;
+                } else {
+                    O_selectAll.checked = false;
+                }//判断 是否全选
+
+            }else{
+                F_Tool.removeClass(F_Tool.parents(item, 'dd'), 'Clicked');
+                F_Tool.addClass(F_Tool.parents(item, 'dd'), 'Unclick');
+                if(F_manageData.whereTheValue(OA_Group,item.dataset.fileid)!='meiyou'){
+                    OA_Group.splice(F_manageData.whereTheValue(OA_Group,item.dataset.fileid),1);
+                }
+            };
+    });
+
 }
 
 function F_Up(){
     document.removeEventListener('mousemove',F_move);
     document.removeEventListener('mouseup',F_Up);
-    newDiv.style.display = 'none';
+    newDiv.className = 'tabHide';
 }
