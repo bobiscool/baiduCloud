@@ -26,6 +26,7 @@ var O_Cash = document.getElementById('Cash');
 var O_ToolsBar = document.getElementById('Tools');
 var O_ScroolBar = document.getElementById('Scrollbar');
 var O_Scroolspan = O_ScroolBar.getElementsByTagName('span')[0];
+var O_rightMenu = document.getElementById('rightMenu');
 var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
@@ -36,6 +37,9 @@ var Deleted = [];
 var Alldeleted = [];
 var disX = 0;
 var disY =0;
+var Old2 = O_rightMenu;
+var O_RLorG = document.getElementById('R-LorG');
+var O_RUporDown = document.getElementById('R-UporDown');
 // console.log(O_Howmany);
 
 F_RenderData(JsonData, 0, 'Cap', 'Up');
@@ -142,6 +146,116 @@ O_Cash.onclick = function () {
     O_Navtitleul.style.display = "none";
     F_RenderData(Deleted, 'n', 'Cap', 'Up');
 };
+document.oncontextmenu = function(ev){
+    var ev = ev||window.event;
+    O_rightMenu.style.display = 'block';
+    O_rightMenu.style.left = ev.clientX +'px';
+    O_rightMenu.style.top = ev.clientY +'px';
+
+    return false;
+};
+
+O_rightMenu.onmouseover = function(ev){
+    var  ev = ev||window.event;
+    var tem = null;
+    ev.target.tagName =='DIV'?tem=ev.target:tem=F_Tool.parents(ev.target,'div');
+    console.log(tem);
+
+    if(tem&&(tem.className=='R-Operation-list'||tem.className=='R-Tool-list')){
+        Old2.style.backgroundColor = '#fff';
+        tem.style.backgroundColor = '#00B4CC';
+        Old2 = tem;
+        if(tem.dataset.showwhat =='LorG'){
+            O_RLorG.style.display = 'block';
+            O_RUporDown.style.display = 'none';
+        }else if(tem.dataset.showwhat =='UporDown'){
+            O_RLorG.style.display = 'none';
+            O_RUporDown.style.display = 'block';
+        }else{
+            O_RLorG.style.display = 'none';
+            O_RUporDown.style.display = 'none';
+        }
+    }
+};
+O_rightMenu.addEventListener('click',function () {
+    var  ev = ev||window.event;
+    var tem = null;
+    ev.target.tagName =='DIV'?tem=ev.target:tem=F_Tool.parents(ev.target,'div');
+    console.log(tem);
+
+    if(tem&&(tem.className=='R-Operation-list'||tem.className=='R-Tool-list')){
+        if(tem.dataset.showwhat =='Refresh'){
+            F_RenderData(JsonData, F_findlevel(), 'Cap', 'Up');
+            console.log('点击了刷新');
+            O_rightMenu.style.display = 'none';
+        }
+
+        if(tem.dataset.showwhat =='Reload'){
+            location.reload();
+            O_rightMenu.style.display = 'none';
+        }
+
+
+        if(tem.dataset.showwhat =='NewFolder'){
+            console.log('点击了新建');
+            F_createNewFolder();
+            O_rightMenu.style.display = 'none';
+        }
+    }
+
+
+});
+O_RLorG.addEventListener('click',function(ev){
+    var ev = ev||window.event;
+    var tem = ev.target;
+    console.log(tem.dataset.showwhat);
+    if(tem.dataset.showwhat){
+        if(tem.dataset.showwhat=="List"){
+            O_Lswich.click();
+            O_rightMenu.style.display = 'none';
+            O_RLorG.className = 'List-view-span';
+            O_RLorG.style.display = 'none';
+
+        }
+        if(tem.dataset.showwhat=="Gird"){
+            O_Gswich.click();
+            O_rightMenu.style.display = 'none';
+            O_RLorG.style.display = 'none';
+            O_RLorG.className = 'Gird-view-span';
+        }
+    }
+
+});
+
+O_RUporDown.addEventListener('click',function(ev){
+    var ev = ev||window.event;
+    var tem = ev.target;
+    console.log(tem.dataset.showwhat);
+    if(tem.dataset.showwhat){
+        if(tem.dataset.showwhat=="FileName"){
+            O_NameUD.click();
+            O_rightMenu.style.display = 'none';
+            O_RUporDown.className = 'nameD';
+            O_RUporDown.style.display = 'none';
+
+        }
+        if(tem.dataset.showwhat=="Capicy"){
+            O_CapUD.click();
+            O_rightMenu.style.display = 'none';
+            O_RUporDown.style.display = 'none';
+            O_RUporDown.className = 'capD';
+        }
+
+        if(tem.dataset.showwhat=="Time"){
+            O_TimeUD.click();
+            O_rightMenu.style.display = 'none';
+            O_RUporDown.style.display = 'none';
+            O_RUporDown.className = 'TimeD';
+        }
+    }
+
+});
+
 
 var OviewDl = document.getElementsByTagName('dl')[0];
 

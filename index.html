@@ -47,19 +47,19 @@
     <div id="Right-banner">
         <ul id="Item-list">
             <li data-showwhat="All" class="active"><a href="javascript: void(0);" class=""><span
-                    class    = "Boutton-ico"></span><span>全部文件</span></a></li>
+                    class="Boutton-ico"></span><span>全部文件</span></a></li>
             <li data-showwhat="PictureData"><a href="javascript: void(0);" class=""><span
-                    class    = "Boutton-ico"></span><span>图片</span></a></li>
+                    class="Boutton-ico"></span><span>图片</span></a></li>
             <li data-showwhat="FileData"><a href="javascript: void(0);" class=""><span class="Boutton-ico"></span><span>文档</span></a>
             </li>
             <li data-showwhat="VideoData"><a href="javascript: void(0);" class=""><span
-                    class    = "Boutton-ico"></span><span>视频</span></a></li>
+                    class="Boutton-ico"></span><span>视频</span></a></li>
             <li data-showwhat="Torrent"><a href="javascript: void(0);" class=""><span class="Boutton-ico"></span><span>种子</span></a>
             </li>
             <li data-showwhat="AudioData"><a href="javascript: void(0);" class=""><span
-                    class    = "Boutton-ico"></span><span>音乐</span></a></li>
+                    class="Boutton-ico"></span><span>音乐</span></a></li>
             <li data-showwhat="OtherData"><a href="javascript: void(0);" class=""><span
-                    class    = "Boutton-ico"></span><span>其他</span></a></li>
+                    class="Boutton-ico"></span><span>其他</span></a></li>
 
 
         </ul>
@@ -71,8 +71,8 @@
 
             </li>
             <li id="Cash">
-                <div class="Item-Sperate" ></div>
-                <a href="javascript: void(0);"  ><span class="Boutton-ico3"></span><span>回收站</span></a></li>
+                <div class="Item-Sperate"></div>
+                <a href="javascript: void(0);"><span class="Boutton-ico3"></span><span>回收站</span></a></li>
         </ul>
 
         <div id="Device">
@@ -81,11 +81,12 @@
             <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>Apple</span></a>
             <a href="javascript: void(0);" class=""><span class="Boutton-ico2"></span><span>更多</span></a>
         </div>
-    </div>`
+    </div>
+    `
 
     <div id="Main-border">
         <div id="Tools-bar">
-            <div id="Tools" >
+            <div id="Tools">
                 <span class="Upload"><span></span>上传</span>
                 <span class="NewFolder"><span></span>新建文件夹</span>
                 <span class="Lixian">
@@ -157,22 +158,52 @@
         </div>
 
         <div id="Scrollbar">
-                <span></span>
+            <span></span>
         </div>
     </div>
     <div id="Mask">
-    <div id="Confirm">
-        <h3>&nbsp;&nbsp;确认删除</h3>
-        <div class="Areyousure">
-            确认要把所选文件放入回收站吗？<br>删除的文件可在10天内通过回收站还原</div>
+        <div id="Confirm">
+            <h3>&nbsp;&nbsp;确认删除</h3>
+            <div class="Areyousure">
+                确认要把所选文件放入回收站吗？<br>删除的文件可在10天内通过回收站还原
+            </div>
 
             <div id="Confirm-Button">
-            <div class="Cb CB-Ac">确认</div>
-            <div class="Cb CB-Ua">取消</div>
+                <div class="Cb CB-Ac">确认</div>
+                <div class="Cb CB-Ua">取消</div>
+            </div>
         </div>
-        </div>
+
     </div>
 
+    <div id="rightMenu">
+        <div id="R-Operation">
+            <div class="R-Operation-list" data-showwhat="LorG"><span>查看</span><span class="Trigle2"></span>
+
+                <ul id="R-LorG">
+                    <li data-showwhat="List"><span></span>列表</li>
+                    <li data-showwhat="Gird"> <span></span>缩略图</li>
+                </ul>
+
+
+            </div>
+            <div class="R-Operation-list" data-showwhat="UporDown"><span>排序方式</span ><span class="Trigle1"></span>
+
+                <ul id="R-UporDown">
+                    <li data-showwhat="FileName"><span></span>文件名</li>
+                    <li data-showwhat="Capicy"> <span></span>大小</li>
+                    <li data-showwhat="Time"> <span></span>修改时间</li>
+                </ul>
+
+            </div>
+            <div class="R-Operation-list" data-showwhat="Refresh">刷新</div>
+        </div>
+
+        <div id="R-Tool">
+            <div class="R-Tool-list" data-showwhat="Reload">重新加载页面</div>
+            <div class="R-Tool-list" data-showwhat="NewFolder"><span class="Folder"></span><span>新建文件夹</span></div>
+        </div>
+    </div>
 
 </div>
 </body>

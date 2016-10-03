@@ -1409,3 +1409,163 @@ li {
 .tabHide {
   display: none;
 }
+#rightMenu {
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  border: 1px solid #BABABA;
+  display: none;
+  cursor: pointer;
+}
+#rightMenu #R-Operation {
+  display: inline-block;
+  width: 100%;
+  height: 60%;
+}
+#rightMenu #R-Operation .R-Operation-list {
+  width: 100%;
+  height: 33%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 19px;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) #R-LorG {
+  width: 80px;
+  position: relative;
+  left: 150px;
+  top: -20px;
+  background-color: #fff;
+  border: 1px solid #80848C;
+  padding: 0;
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) #R-LorG li:hover {
+  background-color: #00B4CC;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) .List-view-span li:nth-child(1) span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) .List-view-span li:nth-child(2) span {
+  display: none;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) .Gird-view-span li:nth-child(1) span {
+  display: none;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(1) .Gird-view-span li:nth-child(2) span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) #R-UporDown {
+  width: 80px;
+  position: relative;
+  left: -82px;
+  top: -15px;
+  background-color: #fff;
+  border: 1px solid #80848C;
+  padding: 0;
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) #R-UporDown li:hover {
+  background-color: #00B4CC;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .nameD li:nth-child(1) span {
+  display: inline-block;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .nameD li:nth-child(2) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .nameD li:nth-child(3) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .capD li:nth-child(1) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .capD li:nth-child(2) span {
+  display: inline-block;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .capD li:nth-child(3) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .TimeD li:nth-child(1) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .TimeD li:nth-child(2) span {
+  display: none;
+}
+#rightMenu #R-Operation .R-Operation-list:nth-child(2) .TimeD li:nth-child(3) span {
+  display: inline-block;
+  height: 5px;
+  margin-right: 2px;
+  background-color: #f5a843;
+  border-radius: 10px ;
+}
+#rightMenu #R-Operation .Trigle1,
+#rightMenu #R-Operation .Trigle2 {
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 10px solid black;
+  border-bottom: 5px solid transparent;
+}
+#rightMenu #R-Operation .Trigle2 {
+  left: 60px;
+}
+#rightMenu #R-Operation .Trigle1 {
+  left: 48px;
+}
+#rightMenu #R-Tool {
+  border-top: 1px solid #c6c8cc ;
+  display: inline-block;
+  width: 100%;
+  height: 40%;
+}
+#rightMenu #R-Tool .R-Tool-list {
+  margin-top: 0;
+  text-align: center;
+  line-height: 19px;
+  width: 100%;
+  height: 49%;
+}
+#rightMenu #R-Tool span {
+  display: inline-block;
+  float: left;
+}
+#rightMenu #R-Tool .Folder {
+  display: inline-block;
+  margin-left: 25px;
+  width: 20px;
+  height: 15px;
+  background: url("../img/small-folder.png") 0px -41px;
+}
