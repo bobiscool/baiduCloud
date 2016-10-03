@@ -318,15 +318,14 @@ li {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url("../img/Item-more.png");
 }
 #Right-banner #Item-More span {
   margin-right: 10px;
 }
 #Right-banner #Item-More .Item-Sperate {
-  width: 100%;
+  width: 210px;
   height: 0;
-  margin: 5px 0 5px -40px;
+  margin: 0px 0 5px 0;
   border-top: #dce1e6 1px solid;
   border-bottom: #f7f9fb 1px solid;
 }
@@ -338,15 +337,48 @@ li {
   vertical-align: middle;
 }
 #Right-banner #Item-More li {
-  width: 206px;
+  width: 210px;
   margin-top: 10px;
+  margin-left: -40px;
   height: 32px;
+  line-height: 32px;
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
 }
-#Right-banner #Item-More li:nth-child(1) a span {
+#Right-banner #Item-More li a {
+  margin-left: 40px;
+  position: relative;
+  bottom: 5px;
+}
+#Right-banner #Item-More li:nth-child(1) a span:nth-child(1) {
+  background: url("../img/Item-more.png");
   background-position: 0 0;
 }
-#Right-banner #Item-More li:nth-child(2) a span {
-  background-position: 0 -22px;
+#Right-banner #Item-More li:nth-child(2) {
+  border-top: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+}
+#Right-banner #Item-More li:nth-child(2) a span:nth-child(1) {
+  background: url("../img/Item-more.png");
+  background-position: -2px -22px;
+}
+#Right-banner #Item-More li:nth-child(2):hover {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-More li:nth-child(2):hover a span:nth-child(1) {
+  background: url("../img/Item-more.png");
+  background-position: 20px -22px !important;
+}
+#Right-banner #Item-More .active {
+  background: #E2E2E2;
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+}
+#Right-banner #Item-More .active a span:nth-child(1) {
+  background: url("../img/Item-more.png");
+  background-position: 20px -22px !important;
 }
 #Right-banner #Device {
   float: left;
@@ -1334,4 +1366,15 @@ li {
 #Confirm #Confirm-Button .CB-Ua {
   background-color: #d0d2d6;
   color: #000;
+}
+#SelectTab {
+  width: 0px;
+  height: 0px;
+  background: #cdf5fd;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #000;
+  z-index: 100;
+  opacity: 0.5;
 }

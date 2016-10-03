@@ -46,9 +46,9 @@ var renderData = {// 利用EC6的特性  生成模板函数
             <div class="${itemData.Type}">
             <span></span>
             </div>
-            <span class="File-Title Uedit">
+            <span class="File-Title Editing">
             <span class="EditArea">
-            <input type="text" class="inputBox" placeholder="dsfsdfsdfs" value="dsfsdfsdfs">
+            <input type="text" class="inputBox" placeholder="dsfsdfsdfs" value="${itemData.Title}">
             <span class="Name">${itemData.Title}</span>
             <span class="Type"></span>
             </span>

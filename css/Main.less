@@ -429,7 +429,7 @@ li {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background: url("../img/Item-more.png")
+
     }
 
     span {
@@ -437,9 +437,9 @@ li {
     }
 
     .Item-Sperate {
-      width: 100%;
+      width: 210px;
       height: 0;
-      margin: 5px 0 5px -40px;
+      margin: 0px 0 5px 0;
       border-top: #dce1e6 1px solid;
       border-bottom: #f7f9fb 1px solid;
     }
@@ -449,26 +449,62 @@ li {
         display: inline-block;
         vertical-align: middle;
       }
-
     }
     li {
-      width: 206px;
+      width: 210px;
       margin-top: 10px;
+      margin-left: -40px;
       height: 32px;
+      line-height: 32px;
+      border-top: 1px solid #F0F0F0;
+      border-bottom: 1px solid #F0F0F0;
+      a {
+        margin-left: 40px;
+        position: relative;
+        bottom: 5px;
+      }
     }
 
     li:nth-child(1) {
       a {
-        span {
+        span:nth-child(1) {
+          background: url("../img/Item-more.png");
           background-position: 0 0;
         }
       }
     }
 
     li:nth-child(2) {
+      border-top: 1px solid #F0F0F0;
+      border-bottom: 1px solid #F0F0F0;
       a {
-        span {
-          background-position: 0 -22px
+        span:nth-child(1) {
+          background: url("../img/Item-more.png");
+          background-position: -2px -22px;
+        }
+      }
+    }
+    li:nth-child(2):hover {
+      background: #E2E2E2;
+      border-top: 1px solid #F2F2F2;
+      border-bottom: 1px solid #F2F2F2;
+      a {
+        span:nth-child(1)  {
+          background: url("../img/Item-more.png");
+          background-position: 20px -22px!important;
+        }
+      }
+
+    }
+
+    .active {
+      background: #E2E2E2;
+      border-top: 1px solid #F2F2F2;
+      border-bottom: 1px solid #F2F2F2;
+      a {
+        span:nth-child(1)  {
+          background: url("../img/Item-more.png");
+          background-position: 20px -22px!important;
         }
       }
     }
@@ -1696,5 +1732,21 @@ li {
 
 
 
+
+
+}
+
+
+
+#SelectTab {
+  width:0px;
+  height:0px;
+  background: #cdf5fd;
+  position: absolute;
+  left:0;
+  top:0;
+  border:1px solid #000;
+  z-index:100;
+  opacity:0.5;
 
 }
