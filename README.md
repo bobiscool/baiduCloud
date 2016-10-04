@@ -1,5 +1,8 @@
 #仿百度云
-![](http://7o50ww.com1.z0.glb.clouddn.com/Karl**s**baiduyun.png)
+![](1.png)
+![](2.gif)
+
+
 断断续续 花了两周时间敲出来的百度云模仿
 - 自己写的一个创建随机文件的函数RandomData 在打开网页的同时随机产生数据
 - 然后用ECMA6的特性写了一个HTML模板,渲染数据到网页上
