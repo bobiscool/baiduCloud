@@ -1,5 +1,5 @@
 #仿百度云
-![]('http://7o50ww.com1.z0.glb.clouddn.com/Karl_s_baiduyun.png')
+![](http://7o50ww.com1.z0.glb.clouddn.com/Karl_s_baiduyun.png)
 断断续续 花了两周事件敲出来的百度云模仿
 - 自己写的一个创建随机文件的函数RandomData 在打开网页的同时随机产生数据
 - 然后用ECMA6的特性写了一个HTML模板,渲染数据到网页上
@@ -12,4 +12,5 @@
 
 ---
 
-####我是想从事_前端开发_的的土木工程师,现准备在北京求一份实习(16毕业生),或者正式工作。要看我简历猛击这里[邬一平的简历]('http://resumeclear.applinzi.com/')
+####我是想从事_前端开发_的的土木工程师,现准备在北京求一份实习(16毕业生),或者正式工作。要看我简历猛击这里
+[邬一平的简历](http://resumeclear.applinzi.com/)
