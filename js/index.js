@@ -21,6 +21,7 @@ var O_Navtitleul = document.getElementById('Nav-title-ul');
 var O_NewFolder = document.getElementsByClassName('NewFolder')[0];
 var O_Delete = document.getElementsByClassName('B-Delete')[0];
 var O_Confirm = document.getElementById('Confirm');
+var O_Confirm2 = document.getElementById('Confirm2');
 var O_Mask = document.getElementById('Mask');
 var O_Cash = document.getElementById('Cash');
 var O_ToolsBar = document.getElementById('Tools');
@@ -31,7 +32,6 @@ var childs = [];
 var OA_Group = [];
 var OA_NowWhere = [];
 var IdNumber = JsonData.length;
-var NowEdit = null;
 var newDiv = null;
 var Deleted = [];
 var Alldeleted = [];
@@ -40,6 +40,10 @@ var disY =0;
 var Old2 = O_rightMenu;
 var O_RLorG = document.getElementById('R-LorG');
 var O_RUporDown = document.getElementById('R-UporDown');
+var NowWhere={
+    Lorg:"L",
+    Item:'All'
+};
 // console.log(O_Howmany);
 
 F_RenderData(JsonData, 0, 'Cap', 'Up');
@@ -57,6 +61,7 @@ OItemList.addEventListener('click', function (ev) {
         F_scroolBar();
         F_Tool.removeClass(Old, 'active');
         F_Tool.addClass(ev.target, 'active');
+        NowWhere.Item = ev.target.dataset.showwhat;
         F_ShowWho(ev.target.dataset.showwhat);
         Old = ev.target;
         if (ev.target.dataset.showwhat != 'All') {
@@ -90,6 +95,7 @@ O_Lswich.addEventListener('click', function () {
     O_Operation.className = '';
     F_Tool.addClass(O_Operation, 'UchoosedItemList');
     F_scroolBar();
+    NowWhere.Lorg = 'L';
 });
 O_Gswich.addEventListener('click', function () {
    // F_scroolBar();
@@ -100,6 +106,7 @@ O_Gswich.addEventListener('click', function () {
     O_Operation.className = '';
     F_Tool.addClass(O_Operation, 'UchoosedItemGird');
     F_scroolBar();
+    NowWhere.Lorg = 'G';
 });
 O_NameUD.addEventListener('click', function () {
     if (O_NameUD.getElementsByTagName('span')[0].className == 'Down') {
@@ -144,13 +151,40 @@ O_Cash.onclick = function () {
     Old = this;
     OA_NowWhere = [];
     O_Navtitleul.style.display = "none";
-    F_RenderData(Deleted, 'n', 'Cap', 'Up');
+    O_Mask.style.display = 'block';
+    O_Confirm.style.display = 'none';
+    O_Confirm2.style.display = 'block';
+
+    O_Confirm2.addEventListener('click', function (ev) {
+        if (ev.target.className == "Cb CB-Ac") {
+            O_Mask.style.display = 'none';
+            O_Confirm2.style.display = 'none';
+            O_Confirm.style.display = 'block';
+        }
+        if (ev.target.className == "Cb CB-Ua") {
+            O_Mask.style.display = 'none';
+            O_Confirm2.style.display = 'none';
+            O_Confirm.style.display = 'block';
+        }
+    });
+    F_RenderData([], 'n', 'Cap', 'Up');
 };
 document.oncontextmenu = function(ev){
     var ev = ev||window.event;
     O_rightMenu.style.display = 'block';
     O_rightMenu.style.left = ev.clientX +'px';
     O_rightMenu.style.top = ev.clientY +'px';
+    if(NowWhere.Item!='All'){
+        O_rightMenu.getElementsByClassName('R-Tool-list')[1].style.color='#CCCCCC';
+    }else{
+        O_rightMenu.getElementsByClassName('R-Tool-list')[1].style.color='black';
+    }
+
+    if(NowWhere.Lorg=='G'){
+        O_rightMenu.getElementsByClassName('R-Operation-list')[1].style.color='#CCCCCC';
+    }else{
+        O_rightMenu.getElementsByClassName('R-Operation-list')[1].style.color='black';
+    }
 
     return false;
 };
@@ -168,7 +202,7 @@ O_rightMenu.onmouseover = function(ev){
         if(tem.dataset.showwhat =='LorG'){
             O_RLorG.style.display = 'block';
             O_RUporDown.style.display = 'none';
-        }else if(tem.dataset.showwhat =='UporDown'){
+        }else if(tem.dataset.showwhat =='UporDown'&&NowWhere.Lorg=='L'){
             O_RLorG.style.display = 'none';
             O_RUporDown.style.display = 'block';
         }else{
@@ -177,6 +211,7 @@ O_rightMenu.onmouseover = function(ev){
         }
     }
 };
+
 O_rightMenu.addEventListener('click',function () {
     var  ev = ev||window.event;
     var tem = null;
@@ -185,7 +220,7 @@ O_rightMenu.addEventListener('click',function () {
 
     if(tem&&(tem.className=='R-Operation-list'||tem.className=='R-Tool-list')){
         if(tem.dataset.showwhat =='Refresh'){
-            F_RenderData(JsonData, F_findlevel(), 'Cap', 'Up');
+            F_ShowWho(NowWhere.Item);
             console.log('点击了刷新');
             O_rightMenu.style.display = 'none';
         }
@@ -196,7 +231,7 @@ O_rightMenu.addEventListener('click',function () {
         }
 
 
-        if(tem.dataset.showwhat =='NewFolder'){
+        if(tem.dataset.showwhat =='NewFolder'&&NowWhere.Item=='All'){
             console.log('点击了新建');
             F_createNewFolder();
             O_rightMenu.style.display = 'none';
@@ -206,9 +241,10 @@ O_rightMenu.addEventListener('click',function () {
 
 });
 O_RLorG.addEventListener('click',function(ev){
+
+   
     var ev = ev||window.event;
     var tem = ev.target;
-    console.log(tem.dataset.showwhat);
     if(tem.dataset.showwhat){
         if(tem.dataset.showwhat=="List"){
             O_Lswich.click();
@@ -228,6 +264,9 @@ O_RLorG.addEventListener('click',function(ev){
 });
 
 O_RUporDown.addEventListener('click',function(ev){
+    if(NowWhere.Lorg=='G'){
+        return false;
+    }
     var ev = ev||window.event;
     var tem = ev.target;
     console.log(tem.dataset.showwhat);
@@ -420,13 +459,22 @@ O_Scroolspan.onmousedown  = function (ev) {
 //不过这个监听 应该是 我在 添加了edit之后
 document.addEventListener('mousedown', function (ev) {
     var temObj = document.getElementsByClassName('Editing')[0];
+
     console.log(temObj);
     if (temObj) {
         if (ev.target.tagName != 'INPUT' && ev.target.className != 'ConfirmButton') {
             console.log(temObj);
             temObj.className = 'File-Title Uedit';
         }
+
     }
+  console.log(F_Tool.parents(ev.target,'.rightMenu'));
+     if( !F_Tool.parents(ev.target,'.rightMenu')&&!F_Tool.parents(ev.target,'.R-LorG')&&!F_Tool.parents(ev.target,'.R-UporDown')){
+        O_rightMenu.style.display = 'none';
+        O_RUporDown.style.display = 'none';
+        O_RLorG.style.display = 'none';
+}
+
 
     ev.preventDefault();
 
@@ -577,8 +625,13 @@ function F_DeleteData() {
     console.log(OA_Group);
     OA_Group.map(function (item) {
         var i = F_manageData.whereTheValue(JsonData, F_manageData.WhoHasTheValue(JsonData, item));//为了赶时间   写了一个恶心的算法  见谅 见谅
-      F_manageData.getItChildsAll(JsonData,item);
-        //找到他下面的数据全部删除
+    F_manageData.getItChildsAll(JsonData,item);
+
+
+        //找到他下面的数据全部删除  然后 在Clssify里面也全部删除
+        //有一个数组 然后 数组里面的东西
+        //全部删除掉
+        //classify
         // Alldeleted.map(function(item){
         //     var i = F_manageData.whereTheValue(JsonData,item);
         //     JsonData.splice(i, 1);

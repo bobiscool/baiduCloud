@@ -1392,6 +1392,53 @@ li {
   background-color: #d0d2d6;
   color: #000;
 }
+#Confirm2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -125px;
+  width: 500px;
+  height: 250px;
+  border: 5px solid #999999;
+  background-color: #FFFFFF;
+  z-index: 100;
+  display: none;
+}
+#Confirm2 h3 {
+  margin: 0;
+  padding: 10px 0 10px 0;
+  background-color: #F6F6F6;
+}
+#Confirm2 .Areyousure {
+  text-align: center;
+  padding-top: 44px;
+  width: 500px;
+  height: 20%;
+}
+#Confirm2 #Confirm-Button2 {
+  width: 500px;
+  margin-top: 50px;
+  height: 20%;
+  text-align: center;
+}
+#Confirm2 #Confirm-Button2 .Cb {
+  display: inline-block;
+  margin-left: 10px;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #80848C;
+  border-radius: 2px;
+  font-size: 20px;
+}
+#Confirm2 #Confirm-Button2 .CB-Ac {
+  background-color: #008AF5;
+  color: #fff;
+}
+#Confirm2 #Confirm-Button2 .CB-Ua {
+  background-color: #d0d2d6;
+  color: #000;
+}
 #SelectTab {
   width: 0px;
   height: 0px;
@@ -1432,6 +1479,9 @@ li {
   text-align: center;
   vertical-align: middle;
   line-height: 19px;
+}
+#rightMenu #R-Operation .R-Operation-list:hover {
+  background-color: #00B4CC;
 }
 #rightMenu #R-Operation .R-Operation-list:nth-child(1) #R-LorG {
   width: 80px;

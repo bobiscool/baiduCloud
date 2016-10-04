@@ -25,7 +25,7 @@ var F_manageData ={
         return newArr;
     },
     // 获取当前文件夹 所有的子集item
-    getItChildsAll:function(data,CurentId){//curentObj 是一个dom对象!!!
+    getItChildsAll:function(data,CurentId){
         var arrB= F_manageData.getChildById(data,CurentId);
         if(arrB){
 

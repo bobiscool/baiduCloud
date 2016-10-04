@@ -64,7 +64,7 @@ var F_Tool = (function(){
              * */
 
             if( selector.charAt(0) === "#" ){// id 找父集
-                while(obj.id !== selector.slice(1)){  //如果obj的id 不等于selector的ID
+                while(obj&&obj.id !== selector.slice(1)){  //如果obj的id 不等于selector的ID
                     obj = obj.parentNode;
                 }
             }else if( selector.charAt(0) === "." ){//如果obj的class不等于selector的Class
