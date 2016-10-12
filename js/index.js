@@ -610,6 +610,7 @@ function F_createNewFolder() {
     temDOM.innerHTML = renderData.CreatNewFolder(newData);
     console.log(temDOM);
     Oview.getElementsByTagName('dl')[0].insertBefore(temDOM, Oview.getElementsByTagName('dl')[0].firstChild);
+    temDOM.getElementsByTagName('input')[0].focus();
     console.log(OviewDl);
 }
 
