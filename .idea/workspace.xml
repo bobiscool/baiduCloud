@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f79932e6-72c7-4b50-b4bd-6401f803b39e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
     </list>
     <ignored path="weiyun.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,8 +43,8 @@
               <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/js/index.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="106">
-                      <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
+                    <state relative-caret-position="168">
+                      <caret line="595" column="17" selection-start-line="595" selection-start-column="17" selection-end-line="595" selection-end-column="17" />
                       <folding>
                         <element signature="e#0#37#0" expanded="false" />
                         <element signature="e#1725#1757#0" expanded="false" />
@@ -86,7 +87,6 @@
                         <element signature="n#!!block;n#F_Down#0" expanded="false" />
                         <element signature="n#!!block;n#F_move#0" expanded="false" />
                         <element signature="n#!!block;n#F_Up#0" expanded="false" />
-                        <element signature="n#!!block;n#F_scroolBar#0" expanded="false" />
                         <element signature="n#!!block;n#F_ScroolUp#0" expanded="false" />
                       </folding>
                     </state>
@@ -275,8 +275,8 @@
         <option value="$PROJECT_DIR$/css/Main.less" />
         <option value="$PROJECT_DIR$/js/DataManage.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/index.js" />
       </list>
     </option>
   </component>
@@ -452,12 +452,12 @@
       <workItem from="1474890163067" duration="69306000" />
       <workItem from="1475122607171" duration="138213000" />
       <workItem from="1475721327022" duration="46000" />
-      <workItem from="1476258838553" duration="3518000" />
+      <workItem from="1476258838553" duration="6077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346096000" />
+    <option name="totallyTimeSpent" value="348655000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -477,9 +477,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.072289154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3" sideWeight="0.1042988" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28674698" sideWeight="0.89570117" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28674698" sideWeight="0.89570117" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14094433" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.49753347" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2759036" sideWeight="0.49753347" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -689,7 +689,6 @@
             <element signature="n#!!block;n#F_Down#0" expanded="false" />
             <element signature="n#!!block;n#F_move#0" expanded="false" />
             <element signature="n#!!block;n#F_Up#0" expanded="false" />
-            <element signature="n#!!block;n#F_scroolBar#0" expanded="false" />
             <element signature="n#!!block;n#F_ScroolUp#0" expanded="false" />
           </folding>
         </state>
@@ -989,8 +988,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="619" column="1" selection-start-line="619" selection-start-column="1" selection-end-line="619" selection-end-column="1" />
+        <state relative-caret-position="168">
+          <caret line="595" column="17" selection-start-line="595" selection-start-column="17" selection-end-line="595" selection-end-column="17" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
             <element signature="e#1725#1757#0" expanded="false" />
@@ -1033,7 +1032,6 @@
             <element signature="n#!!block;n#F_Down#0" expanded="false" />
             <element signature="n#!!block;n#F_move#0" expanded="false" />
             <element signature="n#!!block;n#F_Up#0" expanded="false" />
-            <element signature="n#!!block;n#F_scroolBar#0" expanded="false" />
             <element signature="n#!!block;n#F_ScroolUp#0" expanded="false" />
           </folding>
         </state>

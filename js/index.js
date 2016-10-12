@@ -593,6 +593,7 @@ function F_deleteBehind(Arr, number) {
 function F_createNewFolder() {
     //数据层 新建 这时候跟 i有关了 卧槽。。。
     //点击新建IDnumber就加1
+    F_scroolBar();
     var Time = new Date();
     IdNumber++;
     //数据层
