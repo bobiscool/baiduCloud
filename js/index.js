@@ -605,6 +605,7 @@ function F_createNewFolder() {
     newData.idNumber = IdNumber;
     JsonData.push(newData);
     //DOM 阶段 新建 一个 DOM 添加一个修改界面
+    //
     var temDOM = document.createElement('dd');
     temDOM.className = 'Unclick';
     temDOM.innerHTML = renderData.CreatNewFolder(newData);
