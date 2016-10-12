@@ -443,7 +443,7 @@ O_Scroolspan.onmousedown  = function (ev) {
         disY = ev.clientY-O_ScroolBar.offsetTop-disMtS;
         if(disY>=0&&disY<=O_ScroolBar.offsetHeight-O_Scroolspan.offsetHeight){
             O_Scroolspan.style.top = disY+'px';
-            OviewDl.style.top = -disY*(O_ScroolBar.offsetHeight/O_Scroolspan.offsetHeight)+'px';
+            OviewDl.style.top = -disY*(O_ScroolBar.offsetHeight/O_Scroolspan.offsetHeight+1)+'px';
         }
 
     };
