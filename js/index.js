@@ -447,7 +447,7 @@ O_Scroolspan.onmousedown  = function (ev) {
         }
 
     };
-
+//
     document.addEventListener('mouseup', F_ScroolUp);
 
 
